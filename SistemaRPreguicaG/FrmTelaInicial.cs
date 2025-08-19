@@ -28,5 +28,12 @@ namespace SistemaRPreguicaG
             CriarCamp.ShowDialog();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmListaCampanhas ListaCamp = new FrmListaCampanhas();
+            ListaCamp.ShowDialog();
+
+        }
     }
 }

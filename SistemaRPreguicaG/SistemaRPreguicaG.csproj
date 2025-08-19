@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Campanha.cs" />
     <Compile Include="FrmCampanhasExistentes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCampanhasExistentes.Designer.cs">
       <DependentUpon>FrmCampanhasExistentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaCampanhas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaCampanhas.Designer.cs">
+      <DependentUpon>FrmListaCampanhas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTelaInicial.cs">
       <SubType>Form</SubType>
@@ -68,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCriarCampanha.resx">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaCampanhas.resx">
+      <DependentUpon>FrmListaCampanhas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTelaInicial.resx">
       <DependentUpon>FrmTelaInicial.cs</DependentUpon>
@@ -118,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Design sem nome %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baixados.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

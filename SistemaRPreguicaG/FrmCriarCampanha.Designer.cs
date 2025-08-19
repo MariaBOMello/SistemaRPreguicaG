@@ -35,6 +35,7 @@
             this.LblNumeroJogadores = new System.Windows.Forms.Label();
             this.TxtNumeroJogadores = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnSalvarNovaCampanha = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TxtNomeCampanha
@@ -109,12 +110,26 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Nova Campanha";
             // 
-            // FrmLogin
+            // BtnSalvarNovaCampanha
+            // 
+            this.BtnSalvarNovaCampanha.BackColor = System.Drawing.Color.NavajoWhite;
+            this.BtnSalvarNovaCampanha.Font = new System.Drawing.Font("Segoe Script", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalvarNovaCampanha.ForeColor = System.Drawing.Color.BurlyWood;
+            this.BtnSalvarNovaCampanha.Location = new System.Drawing.Point(666, 377);
+            this.BtnSalvarNovaCampanha.Name = "BtnSalvarNovaCampanha";
+            this.BtnSalvarNovaCampanha.Size = new System.Drawing.Size(101, 35);
+            this.BtnSalvarNovaCampanha.TabIndex = 7;
+            this.BtnSalvarNovaCampanha.Text = "Salvar";
+            this.BtnSalvarNovaCampanha.UseVisualStyleBackColor = false;
+            this.BtnSalvarNovaCampanha.Click += new System.EventHandler(this.BtnSalvarNovaCampanha_Click);
+            // 
+            // FrmCriarCampanha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.fundo_espreitador;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnSalvarNovaCampanha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblNumeroJogadores);
             this.Controls.Add(this.TxtNumeroJogadores);
@@ -122,7 +137,7 @@
             this.Controls.Add(this.TxtNexBaseJogadores);
             this.Controls.Add(this.LblNomeCampanha);
             this.Controls.Add(this.TxtNomeCampanha);
-            this.Name = "FrmLogin";
+            this.Name = "FrmCriarCampanha";
             this.Text = "FrmLogin";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,5 +153,6 @@
         private System.Windows.Forms.Label LblNumeroJogadores;
         private System.Windows.Forms.TextBox TxtNumeroJogadores;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnSalvarNovaCampanha;
     }
 }
