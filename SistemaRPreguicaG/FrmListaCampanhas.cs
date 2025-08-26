@@ -48,17 +48,21 @@ namespace SistemaRPreguicaG
                 }
             }
 
-            AtualizarLista();
+
         }
 
-        private void AtualizarLista()
-        {
-            listBoxCampanhas.Items.Clear();
 
-            foreach (var c in campanhas)
-            {
-                listBoxCampanhas.Items.Add(c.Nome);
-            }
+
+        private void FrmListaCampanhas_Load(object sender, EventArgs e)
+        {
+            
+            this.campanhasTableAdapter.Fill(this.rPGdbDataSet.Campanhas);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
