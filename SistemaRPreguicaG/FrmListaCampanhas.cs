@@ -23,7 +23,7 @@ namespace SistemaRPreguicaG
 
         public void CarregarCampanhas()
         {
-            string connectionString = @"Server=localhost;Database=RPGdb;Trusted_Connection=True;";
+            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
             campanhas.Clear();
 
             using (SqlConnection con = new SqlConnection(connectionString))

@@ -53,6 +53,12 @@
     <Compile Include="FrmCampanhasExistentes.Designer.cs">
       <DependentUpon>FrmCampanhasExistentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDadosCampanha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDadosCampanha.Designer.cs">
+      <DependentUpon>FrmDadosCampanha.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListaCampanhas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCriarCampanha.resx">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDadosCampanha.resx">
+      <DependentUpon>FrmDadosCampanha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListaCampanhas.resx">
       <DependentUpon>FrmListaCampanhas.cs</DependentUpon>
@@ -131,6 +140,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baixados.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carente.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b0d1d351-971c-428a-80cb-fbd8532b0c7e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carente1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

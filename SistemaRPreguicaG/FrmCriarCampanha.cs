@@ -24,8 +24,8 @@ namespace SistemaRPreguicaG
             int nexBase = int.Parse(TxtNexBaseJogadores.Text);
             int numeroJogadores = int.Parse(TxtNumeroJogadores.Text);
 
-            // Aqui você coloca a string de conexão
-            string connectionString = @"Server=localhost;Database=RPGdb;Trusted_Connection=True;";
+            
+            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -41,6 +41,7 @@ namespace SistemaRPreguicaG
 
                     cmd.ExecuteNonQuery();
                 }
+                this.Close();
             }
 
             MessageBox.Show("Campanha salva no banco com sucesso!");
@@ -50,3 +51,4 @@ namespace SistemaRPreguicaG
             TxtNumeroJogadores.Clear();
         }
     }
+}

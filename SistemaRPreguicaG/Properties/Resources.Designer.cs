@@ -63,9 +63,39 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap b0d1d351_971c_428a_80cb_fbd8532b0c7e {
+            get {
+                object obj = ResourceManager.GetObject("b0d1d351-971c-428a-80cb-fbd8532b0c7e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baixados {
             get {
                 object obj = ResourceManager.GetObject("baixados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carente {
+            get {
+                object obj = ResourceManager.GetObject("carente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carente1 {
+            get {
+                object obj = ResourceManager.GetObject("carente1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +136,16 @@ namespace SistemaRPreguicaG.Properties {
         internal static System.Drawing.Bitmap Design_sem_nome__3_ {
             get {
                 object obj = ResourceManager.GetObject("Design sem nome (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__4_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
