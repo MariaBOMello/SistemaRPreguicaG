@@ -55,7 +55,7 @@ namespace SistemaRPreguicaG
 
         private void FrmListaCampanhas_Load(object sender, EventArgs e)
         {
-            
+
             this.campanhasTableAdapter.Fill(this.rPGdbDataSet.Campanhas);
 
         }
@@ -69,16 +69,10 @@ namespace SistemaRPreguicaG
         {
             if (DgvListaCampanhas.CurrentRow != null)
             {
-                // Cria um objeto Personagem com os dados da linha selecionada
-                var personagem = new Personagem
-                {
-                    Id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells["Id"].Value),
-                    Nome = DgvListaCampanhas.CurrentRow.Cells["Nome"].Value.ToString(),
-                    Classe = DgvListaCampanhas.CurrentRow.Cells["Classe"].Value.ToString()
-                };
+
 
                 // Abre a FrmDadosCampanha, passando o objeto
-                var frmDados = new FrmDadosCampanha(personagem);
+                FrmDadosCampanha frmDados = new FrmDadosCampanha(Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells["Id"].Value));
                 frmDados.Show();
             }
             else
@@ -87,3 +81,4 @@ namespace SistemaRPreguicaG
             }
         }
     }
+}

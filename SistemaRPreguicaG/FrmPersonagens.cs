@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaRPreguicaG
 {
-    public partial class FrmDadosCampanha : Form
+    public partial class FrmPersonagens : Form
     {
-        private int IDcampanha;
-        public FrmDadosCampanha(int idcampanha)
+        public FrmPersonagens()
         {
             InitializeComponent();
-            IDcampanha = idcampanha;
         }
     }
 }
