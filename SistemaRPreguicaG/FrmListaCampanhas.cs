@@ -64,5 +64,26 @@ namespace SistemaRPreguicaG
         {
 
         }
+
+        private void BtnSelecionarCampanha_Click(object sender, EventArgs e)
+        {
+            if (DgvListaCampanhas.CurrentRow != null)
+            {
+                // Cria um objeto Personagem com os dados da linha selecionada
+                var personagem = new Personagem
+                {
+                    Id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells["Id"].Value),
+                    Nome = DgvListaCampanhas.CurrentRow.Cells["Nome"].Value.ToString(),
+                    Classe = DgvListaCampanhas.CurrentRow.Cells["Classe"].Value.ToString()
+                };
+
+                // Abre a FrmDadosCampanha, passando o objeto
+                var frmDados = new FrmDadosCampanha(personagem);
+                frmDados.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione uma linha da tabela.");
+            }
+        }
     }
-}
