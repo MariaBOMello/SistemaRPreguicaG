@@ -38,6 +38,7 @@ namespace SistemaRPreguicaG
                     {
                         Campanha c = new Campanha
                         {
+
                             Nome = reader.GetString(0),
                             NexBase = reader.GetInt32(1),
                             NumeroJogadores = reader.GetInt32(2)
@@ -60,20 +61,17 @@ namespace SistemaRPreguicaG
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+  
 
         private void BtnSelecionarCampanha_Click(object sender, EventArgs e)
         {
-            if (DgvListaCampanhas.CurrentRow != null)
+            if (DgvListaCampanhas.SelectedRows != null)
             {
 
 
                 // Abre a FrmDadosCampanha, passando o objeto
-                FrmDadosCampanha frmDados = new FrmDadosCampanha(Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells["Id"].Value));
-                frmDados.Show();
+                FrmDadosCampanha frmDados = new FrmDadosCampanha(Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value));
+                frmDados.ShowDialog();
             }
             else
             {

@@ -33,25 +33,26 @@
             this.LblCalendario = new System.Windows.Forms.Label();
             this.LblNPC = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtPersonagemNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtClasse = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtOrigem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtMonstroNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtNpcNome = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtFuncao = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TxtVD = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TxtPV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.TxtDefesa = new System.Windows.Forms.TextBox();
+            this.BtnSalvarDados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblMonstros
@@ -106,13 +107,13 @@
             this.linkLabel1.Size = new System.Drawing.Size(0, 13);
             this.linkLabel1.TabIndex = 8;
             // 
-            // textBox1
+            // TxtPersonagemNome
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox1.Location = new System.Drawing.Point(35, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 9;
+            this.TxtPersonagemNome.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtPersonagemNome.Location = new System.Drawing.Point(35, 74);
+            this.TxtPersonagemNome.Name = "TxtPersonagemNome";
+            this.TxtPersonagemNome.Size = new System.Drawing.Size(187, 20);
+            this.TxtPersonagemNome.TabIndex = 9;
             // 
             // label1
             // 
@@ -136,13 +137,13 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Classe";
             // 
-            // textBox2
+            // TxtClasse
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox2.Location = new System.Drawing.Point(35, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(187, 20);
-            this.textBox2.TabIndex = 12;
+            this.TxtClasse.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtClasse.Location = new System.Drawing.Point(35, 118);
+            this.TxtClasse.Name = "TxtClasse";
+            this.TxtClasse.Size = new System.Drawing.Size(187, 20);
+            this.TxtClasse.TabIndex = 12;
             // 
             // label3
             // 
@@ -155,13 +156,13 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Origem";
             // 
-            // textBox3
+            // TxtOrigem
             // 
-            this.textBox3.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox3.Location = new System.Drawing.Point(35, 162);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 20);
-            this.textBox3.TabIndex = 14;
+            this.TxtOrigem.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtOrigem.Location = new System.Drawing.Point(35, 162);
+            this.TxtOrigem.Name = "TxtOrigem";
+            this.TxtOrigem.Size = new System.Drawing.Size(187, 20);
+            this.TxtOrigem.TabIndex = 14;
             // 
             // label4
             // 
@@ -174,13 +175,13 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Nome";
             // 
-            // textBox4
+            // TxtMonstroNome
             // 
-            this.textBox4.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox4.Location = new System.Drawing.Point(35, 262);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(187, 20);
-            this.textBox4.TabIndex = 16;
+            this.TxtMonstroNome.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtMonstroNome.Location = new System.Drawing.Point(35, 262);
+            this.TxtMonstroNome.Name = "TxtMonstroNome";
+            this.TxtMonstroNome.Size = new System.Drawing.Size(187, 20);
+            this.TxtMonstroNome.TabIndex = 16;
             // 
             // label5
             // 
@@ -193,13 +194,13 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Nome";
             // 
-            // textBox5
+            // TxtNpcNome
             // 
-            this.textBox5.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox5.Location = new System.Drawing.Point(545, 73);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(187, 20);
-            this.textBox5.TabIndex = 18;
+            this.TxtNpcNome.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtNpcNome.Location = new System.Drawing.Point(545, 73);
+            this.TxtNpcNome.Name = "TxtNpcNome";
+            this.TxtNpcNome.Size = new System.Drawing.Size(187, 20);
+            this.TxtNpcNome.TabIndex = 18;
             // 
             // label6
             // 
@@ -212,13 +213,13 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Função";
             // 
-            // textBox6
+            // TxtFuncao
             // 
-            this.textBox6.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox6.Location = new System.Drawing.Point(545, 118);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(187, 20);
-            this.textBox6.TabIndex = 20;
+            this.TxtFuncao.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtFuncao.Location = new System.Drawing.Point(545, 118);
+            this.TxtFuncao.Name = "TxtFuncao";
+            this.TxtFuncao.Size = new System.Drawing.Size(187, 20);
+            this.TxtFuncao.TabIndex = 20;
             // 
             // monthCalendar1
             // 
@@ -238,13 +239,13 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "VD";
             // 
-            // textBox7
+            // TxtVD
             // 
-            this.textBox7.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox7.Location = new System.Drawing.Point(35, 306);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(187, 20);
-            this.textBox7.TabIndex = 23;
+            this.TxtVD.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtVD.Location = new System.Drawing.Point(35, 306);
+            this.TxtVD.Name = "TxtVD";
+            this.TxtVD.Size = new System.Drawing.Size(187, 20);
+            this.TxtVD.TabIndex = 23;
             // 
             // label8
             // 
@@ -257,13 +258,13 @@
             this.label8.TabIndex = 24;
             this.label8.Text = "PV";
             // 
-            // textBox8
+            // TxtPV
             // 
-            this.textBox8.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox8.Location = new System.Drawing.Point(35, 350);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(187, 20);
-            this.textBox8.TabIndex = 25;
+            this.TxtPV.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtPV.Location = new System.Drawing.Point(35, 350);
+            this.TxtPV.Name = "TxtPV";
+            this.TxtPV.Size = new System.Drawing.Size(187, 20);
+            this.TxtPV.TabIndex = 25;
             // 
             // label9
             // 
@@ -276,13 +277,24 @@
             this.label9.TabIndex = 26;
             this.label9.Text = "Defesa";
             // 
-            // textBox9
+            // TxtDefesa
             // 
-            this.textBox9.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox9.Location = new System.Drawing.Point(35, 397);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(187, 20);
-            this.textBox9.TabIndex = 27;
+            this.TxtDefesa.BackColor = System.Drawing.Color.LightCoral;
+            this.TxtDefesa.Location = new System.Drawing.Point(35, 397);
+            this.TxtDefesa.Name = "TxtDefesa";
+            this.TxtDefesa.Size = new System.Drawing.Size(187, 20);
+            this.TxtDefesa.TabIndex = 27;
+            // 
+            // BtnSalvarDados
+            // 
+            this.BtnSalvarDados.BackColor = System.Drawing.Color.Brown;
+            this.BtnSalvarDados.Font = new System.Drawing.Font("MV Boli", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalvarDados.Location = new System.Drawing.Point(345, 94);
+            this.BtnSalvarDados.Name = "BtnSalvarDados";
+            this.BtnSalvarDados.Size = new System.Drawing.Size(106, 44);
+            this.BtnSalvarDados.TabIndex = 28;
+            this.BtnSalvarDados.Text = "Salvar Dados";
+            this.BtnSalvarDados.UseVisualStyleBackColor = false;
             // 
             // FrmDadosCampanha
             // 
@@ -290,25 +302,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.fundo_sangue1;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.BtnSalvarDados);
+            this.Controls.Add(this.TxtDefesa);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.TxtPV);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.TxtVD);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TxtFuncao);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.TxtNpcNome);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TxtMonstroNome);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TxtOrigem);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtClasse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtPersonagemNome);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.LblNPC);
             this.Controls.Add(this.LblCalendario);
@@ -316,7 +329,6 @@
             this.Controls.Add(this.LblMonstros);
             this.Name = "FrmDadosCampanha";
             this.Text = "FrmDadosCampanha";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,24 +340,25 @@
         private System.Windows.Forms.Label LblCalendario;
         private System.Windows.Forms.Label LblNPC;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtPersonagemNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtClasse;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtOrigem;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtMonstroNome;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtNpcNome;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtFuncao;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TxtVD;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TxtPV;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox TxtDefesa;
+        private System.Windows.Forms.Button BtnSalvarDados;
     }
 }

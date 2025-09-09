@@ -55,9 +55,9 @@
             this.DgvListaCampanhas.DataSource = this.campanhasBindingSource;
             this.DgvListaCampanhas.Location = new System.Drawing.Point(121, 47);
             this.DgvListaCampanhas.Name = "DgvListaCampanhas";
+            this.DgvListaCampanhas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvListaCampanhas.Size = new System.Drawing.Size(444, 312);
             this.DgvListaCampanhas.TabIndex = 1;
-            this.DgvListaCampanhas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
