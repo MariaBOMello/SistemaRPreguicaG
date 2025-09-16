@@ -29,7 +29,8 @@ namespace SistemaRPreguicaG
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = "SELECT Nome, NexBase, NumeroJogadores FROM Campanhas";
+                // Alterei apenas o nome da tabela para Campanhas_Nova e incluí o Id
+                string query = "SELECT Id, Nome, NexBase, NumeroJogadores FROM Campanhas_Nova";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -38,45 +39,45 @@ namespace SistemaRPreguicaG
                     {
                         Campanha c = new Campanha
                         {
-
-                            Nome = reader.GetString(0),
-                            NexBase = reader.GetInt32(1),
-                            NumeroJogadores = reader.GetInt32(2)
+                            Id = reader.GetInt32(0),          // adicionando o Id
+                            Nome = reader.GetString(1),
+                            NexBase = reader.GetInt32(2),
+                            NumeroJogadores = reader.GetInt32(3)
                         };
 
                         campanhas.Add(c);
                     }
                 }
             }
-
-
         }
-
-
 
         private void FrmListaCampanhas_Load(object sender, EventArgs e)
         {
-
-            this.campanhasTableAdapter.Fill(this.rPGdbDataSet.Campanhas);
-
+            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet1.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
+            this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet1.Campanhas_Nova);
+            // Comentado ou atualizado conforme necessidade, pois a tabela antiga não existe
+            // this.campanhasTableAdapter.Fill(this.rPGdbDataSet.Campanhas);
         }
-
-  
 
         private void BtnSelecionarCampanha_Click(object sender, EventArgs e)
         {
             if (DgvListaCampanhas.SelectedRows != null)
             {
-
-
-                // Abre a FrmDadosCampanha, passando o objeto
-                FrmDadosCampanha frmDados = new FrmDadosCampanha(Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value));
+                // Usa o Id da tabela nova
+                FrmDadosCampanha frmDados = new FrmDadosCampanha(
+                    Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value)
+                );
                 frmDados.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Por favor, selecione uma linha da tabela.");
             }
+        }
+
+        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

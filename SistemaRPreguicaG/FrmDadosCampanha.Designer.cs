@@ -53,6 +53,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TxtDefesa = new System.Windows.Forms.TextBox();
             this.BtnSalvarDados = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LblMonstros
@@ -140,10 +142,11 @@
             // TxtClasse
             // 
             this.TxtClasse.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtClasse.Location = new System.Drawing.Point(35, 118);
+            this.TxtClasse.Location = new System.Drawing.Point(238, 163);
             this.TxtClasse.Name = "TxtClasse";
             this.TxtClasse.Size = new System.Drawing.Size(187, 20);
             this.TxtClasse.TabIndex = 12;
+            this.TxtClasse.TextChanged += new System.EventHandler(this.TxtClasse_TextChanged);
             // 
             // label3
             // 
@@ -159,7 +162,7 @@
             // TxtOrigem
             // 
             this.TxtOrigem.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtOrigem.Location = new System.Drawing.Point(35, 162);
+            this.TxtOrigem.Location = new System.Drawing.Point(221, 211);
             this.TxtOrigem.Name = "TxtOrigem";
             this.TxtOrigem.Size = new System.Drawing.Size(187, 20);
             this.TxtOrigem.TabIndex = 14;
@@ -295,6 +298,73 @@
             this.BtnSalvarDados.TabIndex = 28;
             this.BtnSalvarDados.Text = "Salvar Dados";
             this.BtnSalvarDados.UseVisualStyleBackColor = false;
+            this.BtnSalvarDados.Click += new System.EventHandler(this.BtnSalvarDados_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Acadêmico",
+            "Agente de Saúde",
+            "Amnésico",
+            "Artista",
+            "Astronauta",
+            "Atleta",
+            "Chef",
+            "Chef do outro lado",
+            "Colegial",
+            "Cosplayer",
+            "Criminoso",
+            "Cultista Arrependido",
+            "Desgarrado",
+            "Diplomata",
+            "Engenheiro",
+            "Executivo",
+            "Experimento",
+            "Explorador",
+            "Fanático por Criaturas",
+            "Fotógrafo",
+            "Inventor Paranormal",
+            "Investigador",
+            "Jovem Místico",
+            "Legista do turno da noite",
+            "Lutador",
+            "Magnata",
+            "Mateiro",
+            "Mercenário",
+            "Mergulhador",
+            "Militar",
+            "Motorista",
+            "Nerd Entusiasta",
+            "Operário",
+            "Policial",
+            "Profetizado",
+            "Psicólogo",
+            "Religioso",
+            "Reporter Investigativo",
+            "Servidor Público",
+            "Teórico da Conspiração",
+            "T.I.",
+            "Trabalhador Rural",
+            "Trambiqueiro",
+            "Universitário",
+            "Vítima"});
+            this.comboBox1.Location = new System.Drawing.Point(35, 162);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 21);
+            this.comboBox1.TabIndex = 29;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Combatente",
+            "Especialista",
+            "Ocultista"});
+            this.comboBox2.Location = new System.Drawing.Point(35, 118);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(187, 21);
+            this.comboBox2.TabIndex = 30;
             // 
             // FrmDadosCampanha
             // 
@@ -302,6 +372,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.fundo_sangue1;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BtnSalvarDados);
             this.Controls.Add(this.TxtDefesa);
             this.Controls.Add(this.label9);
@@ -360,5 +432,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtDefesa;
         private System.Windows.Forms.Button BtnSalvarDados;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

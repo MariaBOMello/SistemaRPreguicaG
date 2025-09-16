@@ -30,17 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DgvListaCampanhas = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nexBaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroJogadoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.campanhasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rPGdbDataSet = new SistemaRPreguicaG.RPGdbDataSet();
             this.campanhasTableAdapter = new SistemaRPreguicaG.RPGdbDataSetTableAdapters.CampanhasTableAdapter();
             this.BtnSelecionarCampanha = new System.Windows.Forms.Button();
+            this.rPGdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rPGdbDataSet1 = new SistemaRPreguicaG.RPGdbDataSet1();
+            this.campanhasNovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.campanhas_NovaTableAdapter = new SistemaRPreguicaG.RPGdbDataSet1TableAdapters.Campanhas_NovaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nexBaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroJogadoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvListaCampanhas
@@ -52,37 +59,13 @@
             this.nomeDataGridViewTextBoxColumn,
             this.nexBaseDataGridViewTextBoxColumn,
             this.numeroJogadoresDataGridViewTextBoxColumn});
-            this.DgvListaCampanhas.DataSource = this.campanhasBindingSource;
+            this.DgvListaCampanhas.DataSource = this.campanhasNovaBindingSource;
             this.DgvListaCampanhas.Location = new System.Drawing.Point(121, 47);
             this.DgvListaCampanhas.Name = "DgvListaCampanhas";
             this.DgvListaCampanhas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvListaCampanhas.Size = new System.Drawing.Size(444, 312);
             this.DgvListaCampanhas.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // nexBaseDataGridViewTextBoxColumn
-            // 
-            this.nexBaseDataGridViewTextBoxColumn.DataPropertyName = "NexBase";
-            this.nexBaseDataGridViewTextBoxColumn.HeaderText = "NexBase";
-            this.nexBaseDataGridViewTextBoxColumn.Name = "nexBaseDataGridViewTextBoxColumn";
-            // 
-            // numeroJogadoresDataGridViewTextBoxColumn
-            // 
-            this.numeroJogadoresDataGridViewTextBoxColumn.DataPropertyName = "NumeroJogadores";
-            this.numeroJogadoresDataGridViewTextBoxColumn.HeaderText = "NumeroJogadores";
-            this.numeroJogadoresDataGridViewTextBoxColumn.Name = "numeroJogadoresDataGridViewTextBoxColumn";
+            this.DgvListaCampanhas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaCampanhas_CellContentClick);
             // 
             // campanhasBindingSource
             // 
@@ -112,6 +95,50 @@
             this.BtnSelecionarCampanha.UseVisualStyleBackColor = true;
             this.BtnSelecionarCampanha.Click += new System.EventHandler(this.BtnSelecionarCampanha_Click);
             // 
+            // rPGdbDataSetBindingSource
+            // 
+            this.rPGdbDataSetBindingSource.DataSource = this.rPGdbDataSet;
+            this.rPGdbDataSetBindingSource.Position = 0;
+            // 
+            // rPGdbDataSet1
+            // 
+            this.rPGdbDataSet1.DataSetName = "RPGdbDataSet1";
+            this.rPGdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // campanhasNovaBindingSource
+            // 
+            this.campanhasNovaBindingSource.DataMember = "Campanhas_Nova";
+            this.campanhasNovaBindingSource.DataSource = this.rPGdbDataSet1;
+            // 
+            // campanhas_NovaTableAdapter
+            // 
+            this.campanhas_NovaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // nexBaseDataGridViewTextBoxColumn
+            // 
+            this.nexBaseDataGridViewTextBoxColumn.DataPropertyName = "NexBase";
+            this.nexBaseDataGridViewTextBoxColumn.HeaderText = "NexBase";
+            this.nexBaseDataGridViewTextBoxColumn.Name = "nexBaseDataGridViewTextBoxColumn";
+            // 
+            // numeroJogadoresDataGridViewTextBoxColumn
+            // 
+            this.numeroJogadoresDataGridViewTextBoxColumn.DataPropertyName = "NumeroJogadores";
+            this.numeroJogadoresDataGridViewTextBoxColumn.HeaderText = "NumeroJogadores";
+            this.numeroJogadoresDataGridViewTextBoxColumn.Name = "numeroJogadoresDataGridViewTextBoxColumn";
+            // 
             // FrmListaCampanhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +153,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,10 +165,14 @@
         private RPGdbDataSet rPGdbDataSet;
         private System.Windows.Forms.BindingSource campanhasBindingSource;
         private RPGdbDataSetTableAdapters.CampanhasTableAdapter campanhasTableAdapter;
+        private System.Windows.Forms.Button BtnSelecionarCampanha;
+        private System.Windows.Forms.BindingSource rPGdbDataSetBindingSource;
+        private RPGdbDataSet1 rPGdbDataSet1;
+        private System.Windows.Forms.BindingSource campanhasNovaBindingSource;
+        private RPGdbDataSet1TableAdapters.Campanhas_NovaTableAdapter campanhas_NovaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nexBaseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroJogadoresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button BtnSelecionarCampanha;
     }
 }

@@ -31,7 +31,7 @@ namespace SistemaRPreguicaG
             {
                 con.Open();
 
-                string query = "INSERT INTO Campanhas (Nome, NexBase, NumeroJogadores) VALUES (@Nome, @NexBase, @NumeroJogadores)";
+                string query = "INSERT INTO Campanhas_Nova (Nome, NexBase, NumeroJogadores) VALUES (@Nome, @NexBase, @NumeroJogadores)";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {

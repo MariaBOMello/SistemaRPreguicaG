@@ -21,7 +21,7 @@ namespace SistemaRPreguicaG
             IDcampanha = idcampanha;
         }
 
-        private void BtnSalvarTudo_Click(object sender, EventArgs e)
+        private void BtnSalvarDados_Click(object sender, EventArgs e)
         {
             // ========== Personagem ==========
             string personagemNome = TxtPersonagemNome.Text;
@@ -45,35 +45,35 @@ namespace SistemaRPreguicaG
                 con.Open();
 
                 // ========== SALVAR PERSONAGEM ==========
-                string queryPersonagem = "INSERT INTO Personagens (Nome, Classe, Origem, CampanhaId) VALUES (@Nome, @Classe, @Origem, @CampanhaId)";
+                string queryPersonagem = "INSERT INTO Personagens (Nome, Classe, Origem, Id_Campanha) VALUES (@Nome, @Classe, @Origem, @IdCampanha)";
                 using (SqlCommand cmd = new SqlCommand(queryPersonagem, con))
                 {
                     cmd.Parameters.AddWithValue("@Nome", personagemNome);
                     cmd.Parameters.AddWithValue("@Classe", personagemClasse);
                     cmd.Parameters.AddWithValue("@Origem", personagemOrigem);
-                    cmd.Parameters.AddWithValue("@CampanhaId", IDcampanha);
+                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
                     cmd.ExecuteNonQuery();
                 }
 
                 // ========== SALVAR MONSTRO ==========
-                string queryMonstro = "INSERT INTO Monstros (Nome, VD, PV, Defesa, CampanhaId) VALUES (@Nome, @VD, @PV, @Defesa, @CampanhaId)";
+                string queryMonstro = "INSERT INTO Monstros (Nome, VD, PV, Defesa, Id_Campanha) VALUES (@Nome, @VD, @PV, @Defesa, @IdCampanha)";
                 using (SqlCommand cmd = new SqlCommand(queryMonstro, con))
                 {
                     cmd.Parameters.AddWithValue("@Nome", monstroNome);
                     cmd.Parameters.AddWithValue("@VD", monstroVD);
                     cmd.Parameters.AddWithValue("@PV", monstroPV);
                     cmd.Parameters.AddWithValue("@Defesa", monstroDefesa);
-                    cmd.Parameters.AddWithValue("@CampanhaId", IDcampanha);
+                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
                     cmd.ExecuteNonQuery();
                 }
 
                 // ========== SALVAR NPC ==========
-                string queryNPC = "INSERT INTO NPCs (Nome, Funcao, CampanhaId) VALUES (@Nome, @Funcao, @CampanhaId)";
+                string queryNPC = "INSERT INTO NPCs (Nome, Funcao, Id_Campanha) VALUES (@Nome, @Funcao, @IdCampanha)";
                 using (SqlCommand cmd = new SqlCommand(queryNPC, con))
                 {
                     cmd.Parameters.AddWithValue("@Nome", npcNome);
                     cmd.Parameters.AddWithValue("@Funcao", npcFuncao);
-                    cmd.Parameters.AddWithValue("@CampanhaId", IDcampanha);
+                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -90,6 +90,11 @@ namespace SistemaRPreguicaG
             TxtDefesa.Clear();
             TxtNpcNome.Clear();
             TxtFuncao.Clear();
+        }
+
+        private void TxtClasse_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
