@@ -73,6 +73,26 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anfitriao {
+            get {
+                object obj = ResourceManager.GetObject("anfitriao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anfitriao1 {
+            get {
+                object obj = ResourceManager.GetObject("anfitriao1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap b0d1d351_971c_428a_80cb_fbd8532b0c7e {
             get {
                 object obj = ResourceManager.GetObject("b0d1d351-971c-428a-80cb-fbd8532b0c7e", resourceCulture);
@@ -326,6 +346,16 @@ namespace SistemaRPreguicaG.Properties {
         internal static System.Drawing.Bitmap fundo_sangue1 {
             get {
                 object obj = ResourceManager.GetObject("fundo sangue1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kaiser {
+            get {
+                object obj = ResourceManager.GetObject("kaiser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

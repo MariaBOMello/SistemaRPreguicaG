@@ -71,13 +71,58 @@ namespace SistemaRPreguicaG
             }
             else
             {
-                MessageBox.Show("Por favor, selecione uma linha da tabela.");
+                MessageBox.Show("Por favor, selecione uma Campanha.");
             }
         }
 
         private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void BtnExcluirCampanha_Click(object sender, EventArgs e)
+        {
+            if (DgvListaCampanhas.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione uma linha para excluir.");
+                return;
+            }
+
+            int id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells["Id"].Value);
+
+            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string queryDelete = "DELETE FROM SuaTabela WHERE Id = @Id";
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            // Remove do DataGridView
+            DgvListaCampanhas.Rows.Remove(DgvListaCampanhas.CurrentRow);
+
+            MessageBox.Show("Campanha apagada com sucesso!");
+        }
+
+        private void BtnVizualizarCampanha_Click(object sender, EventArgs e)
+        {
+            if (DgvListaCampanhas.SelectedRows != null && DgvListaCampanhas.CurrentRow != null)
+            {
+                // Pega o Id da campanha selecionada
+                int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
+
+                // Abre a janela de visualização, passando o Id
+                FrmVizualizarCampanha frmVisualizar = new FrmVizualizarCampanha(idCampanha);
+                frmVisualizar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione uma Campanha.");
+            }
         }
     }
 }

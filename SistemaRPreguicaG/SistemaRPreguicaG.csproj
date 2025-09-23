@@ -83,6 +83,12 @@
     <Compile Include="FrmCriarCampanha.Designer.cs">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVizualizarCampanha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVizualizarCampanha.Designer.cs">
+      <DependentUpon>FrmVizualizarCampanha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personagem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +102,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPGdbDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet5.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmCriarCampanha.resx">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTelaInicial.resx">
       <DependentUpon>FrmTelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVizualizarCampanha.resx">
+      <DependentUpon>FrmVizualizarCampanha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +177,50 @@
     </None>
     <None Include="RPGdbDataSet1.xss">
       <DependentUpon>RPGdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet2.xsc">
+      <DependentUpon>RPGdbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet2.xss">
+      <DependentUpon>RPGdbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet3.xsc">
+      <DependentUpon>RPGdbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet3.xss">
+      <DependentUpon>RPGdbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet4.xsc">
+      <DependentUpon>RPGdbDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet4.xss">
+      <DependentUpon>RPGdbDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet5.xsc">
+      <DependentUpon>RPGdbDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet5.xss">
+      <DependentUpon>RPGdbDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +306,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Design sem nome %2813%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anfitriao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaiser.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anfitriao1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
