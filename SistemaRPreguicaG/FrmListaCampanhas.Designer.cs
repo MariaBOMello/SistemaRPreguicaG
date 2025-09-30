@@ -43,13 +43,18 @@
             this.rPGdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.campanhas_NovaTableAdapter = new SistemaRPreguicaG.RPGdbDataSet1TableAdapters.Campanhas_NovaTableAdapter();
             this.BtnVizualizarCampanha = new System.Windows.Forms.Button();
-            this.BtnExcluirCampanha = new System.Windows.Forms.Button();
+            this.BtnInativarCampanha = new System.Windows.Forms.Button();
+            this.rPGdbDataSet7 = new SistemaRPreguicaG.RPGdbDataSet7();
+            this.campanhasNovaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.campanhas_NovaTableAdapter1 = new SistemaRPreguicaG.RPGdbDataSet7TableAdapters.Campanhas_NovaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvListaCampanhas
@@ -61,7 +66,7 @@
             this.nomeDataGridViewTextBoxColumn,
             this.nexBaseDataGridViewTextBoxColumn,
             this.numeroJogadoresDataGridViewTextBoxColumn});
-            this.DgvListaCampanhas.DataSource = this.campanhasNovaBindingSource;
+            this.DgvListaCampanhas.DataSource = this.campanhasNovaBindingSource1;
             this.DgvListaCampanhas.Location = new System.Drawing.Point(121, 47);
             this.DgvListaCampanhas.Name = "DgvListaCampanhas";
             this.DgvListaCampanhas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -155,19 +160,33 @@
             this.BtnVizualizarCampanha.UseVisualStyleBackColor = true;
             this.BtnVizualizarCampanha.Click += new System.EventHandler(this.BtnVizualizarCampanha_Click);
             // 
-            // BtnExcluirCampanha
+            // BtnInativarCampanha
             // 
-            this.BtnExcluirCampanha.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__13_;
-            this.BtnExcluirCampanha.Font = new System.Drawing.Font("RomanT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExcluirCampanha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnExcluirCampanha.Image = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__12_;
-            this.BtnExcluirCampanha.Location = new System.Drawing.Point(615, 301);
-            this.BtnExcluirCampanha.Name = "BtnExcluirCampanha";
-            this.BtnExcluirCampanha.Size = new System.Drawing.Size(144, 115);
-            this.BtnExcluirCampanha.TabIndex = 4;
-            this.BtnExcluirCampanha.Text = "Excluir";
-            this.BtnExcluirCampanha.UseVisualStyleBackColor = true;
-            this.BtnExcluirCampanha.Click += new System.EventHandler(this.BtnExcluirCampanha_Click);
+            this.BtnInativarCampanha.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__13_;
+            this.BtnInativarCampanha.Font = new System.Drawing.Font("RomanT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInativarCampanha.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnInativarCampanha.Image = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__12_;
+            this.BtnInativarCampanha.Location = new System.Drawing.Point(615, 311);
+            this.BtnInativarCampanha.Name = "BtnInativarCampanha";
+            this.BtnInativarCampanha.Size = new System.Drawing.Size(144, 115);
+            this.BtnInativarCampanha.TabIndex = 4;
+            this.BtnInativarCampanha.Text = "Inativar";
+            this.BtnInativarCampanha.UseVisualStyleBackColor = true;
+            this.BtnInativarCampanha.Click += new System.EventHandler(this.BtnInativarCampanha_Click);
+            // 
+            // rPGdbDataSet7
+            // 
+            this.rPGdbDataSet7.DataSetName = "RPGdbDataSet7";
+            this.rPGdbDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // campanhasNovaBindingSource1
+            // 
+            this.campanhasNovaBindingSource1.DataMember = "Campanhas_Nova";
+            this.campanhasNovaBindingSource1.DataSource = this.rPGdbDataSet7;
+            // 
+            // campanhas_NovaTableAdapter1
+            // 
+            this.campanhas_NovaTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmListaCampanhas
             // 
@@ -175,7 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.baixados;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnExcluirCampanha);
+            this.Controls.Add(this.BtnInativarCampanha);
             this.Controls.Add(this.BtnVizualizarCampanha);
             this.Controls.Add(this.BtnSelecionarCampanha);
             this.Controls.Add(this.DgvListaCampanhas);
@@ -188,6 +207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.campanhasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,6 +228,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nexBaseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroJogadoresDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button BtnVizualizarCampanha;
-        private System.Windows.Forms.Button BtnExcluirCampanha;
+        private System.Windows.Forms.Button BtnInativarCampanha;
+        private RPGdbDataSet7 rPGdbDataSet7;
+        private System.Windows.Forms.BindingSource campanhasNovaBindingSource1;
+        private RPGdbDataSet7TableAdapters.Campanhas_NovaTableAdapter campanhas_NovaTableAdapter1;
     }
 }

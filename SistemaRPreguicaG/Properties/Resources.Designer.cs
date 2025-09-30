@@ -203,6 +203,16 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__14_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (14)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Design_sem_nome__2_ {
             get {
                 object obj = ResourceManager.GetObject("Design sem nome (2)", resourceCulture);
@@ -356,6 +366,16 @@ namespace SistemaRPreguicaG.Properties {
         internal static System.Drawing.Bitmap kaiser {
             get {
                 object obj = ResourceManager.GetObject("kaiser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap o_estrangeiro {
+            get {
+                object obj = ResourceManager.GetObject("o estrangeiro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

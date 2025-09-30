@@ -102,6 +102,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPGdbDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPGdbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +131,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet9.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmCriarCampanha.resx">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
@@ -178,6 +208,28 @@
     <None Include="RPGdbDataSet1.xss">
       <DependentUpon>RPGdbDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="RPGdbDataSet10.xsc">
+      <DependentUpon>RPGdbDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet10.xss">
+      <DependentUpon>RPGdbDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet11.xsc">
+      <DependentUpon>RPGdbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet11.xss">
+      <DependentUpon>RPGdbDataSet11.xsd</DependentUpon>
+    </None>
     <None Include="RPGdbDataSet2.xsc">
       <DependentUpon>RPGdbDataSet2.xsd</DependentUpon>
     </None>
@@ -221,6 +273,50 @@
     </None>
     <None Include="RPGdbDataSet5.xss">
       <DependentUpon>RPGdbDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet6.xsc">
+      <DependentUpon>RPGdbDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet6.xss">
+      <DependentUpon>RPGdbDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet7.xsc">
+      <DependentUpon>RPGdbDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet7.xss">
+      <DependentUpon>RPGdbDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet8.xsc">
+      <DependentUpon>RPGdbDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet8.xss">
+      <DependentUpon>RPGdbDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet9.xsc">
+      <DependentUpon>RPGdbDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet9.xss">
+      <DependentUpon>RPGdbDataSet9.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +411,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anfitriao1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o estrangeiro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome %2814%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

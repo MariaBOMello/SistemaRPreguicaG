@@ -53,6 +53,8 @@ namespace SistemaRPreguicaG
 
         private void FrmListaCampanhas_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet7.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
+            this.campanhas_NovaTableAdapter1.Fill(this.rPGdbDataSet7.Campanhas_Nova);
             // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet1.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
             this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet1.Campanhas_Nova);
             // Comentado ou atualizado conforme necessidade, pois a tabela antiga não existe
@@ -80,33 +82,7 @@ namespace SistemaRPreguicaG
 
         }
 
-        private void BtnExcluirCampanha_Click(object sender, EventArgs e)
-        {
-            if (DgvListaCampanhas.CurrentRow == null)
-            {
-                MessageBox.Show("Selecione uma linha para excluir.");
-                return;
-            }
-
-            int id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells["Id"].Value);
-
-            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                string queryDelete = "DELETE FROM SuaTabela WHERE Id = @Id";
-                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
-                {
-                    cmd.Parameters.AddWithValue("@Id", id);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-
-            // Remove do DataGridView
-            DgvListaCampanhas.Rows.Remove(DgvListaCampanhas.CurrentRow);
-
-            MessageBox.Show("Campanha apagada com sucesso!");
-        }
+        
 
         private void BtnVizualizarCampanha_Click(object sender, EventArgs e)
         {
@@ -123,6 +99,34 @@ namespace SistemaRPreguicaG
             {
                 MessageBox.Show("Por favor, selecione uma Campanha.");
             }
+        }
+
+        private void BtnInativarCampanha_Click(object sender, EventArgs e)
+        {
+            if (DgvListaCampanhas.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione uma campanha para inativar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
+
+            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string queryUpdate = "UPDATE Campanhas_Nova SET Estado_Atual = 'Inativa' WHERE Id = @Id";
+                using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Campanha inativada com sucesso!");
+
+            // Atualiza a grid após a alteração
+            CarregarCampanhas();
         }
     }
 }
