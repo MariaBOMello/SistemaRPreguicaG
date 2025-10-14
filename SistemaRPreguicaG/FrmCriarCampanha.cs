@@ -13,42 +13,67 @@ namespace SistemaRPreguicaG
 {
     public partial class FrmCriarCampanha : Form
     {
-        public FrmCriarCampanha()
+        private int usuarioLogadoId;
+
+        public FrmCriarCampanha(int idUsuario)
         {
             InitializeComponent();
+            usuarioLogadoId = idUsuario;
         }
 
         private void BtnSalvarNovaCampanha_Click(object sender, EventArgs e)
         {
-            string nome = TxtNomeCampanha.Text;
-            int nexBase = int.Parse(TxtNexBaseJogadores.Text);
-            int numeroJogadores = int.Parse(TxtNumeroJogadores.Text);
-
-            
-            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
+            // Validação básica
+            if (string.IsNullOrWhiteSpace(TxtNomeCampanha.Text) ||
+                string.IsNullOrWhiteSpace(TxtNexBaseJogadores.Text) ||
+                string.IsNullOrWhiteSpace(TxtNumeroJogadores.Text))
             {
-                con.Open();
-
-                string query = "INSERT INTO Campanhas_Nova (Nome, NexBase, NumeroJogadores) VALUES (@Nome, @NexBase, @NumeroJogadores)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Nome", nome);
-                    cmd.Parameters.AddWithValue("@NexBase", nexBase);
-                    cmd.Parameters.AddWithValue("@NumeroJogadores", numeroJogadores);
-
-                    cmd.ExecuteNonQuery();
-                }
-                this.Close();
+                MessageBox.Show("Preencha todos os campos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            MessageBox.Show("Campanha salva no banco com sucesso!");
+            if (!int.TryParse(TxtNexBaseJogadores.Text, out int nexBase) ||
+                !int.TryParse(TxtNumeroJogadores.Text, out int numeroJogadores))
+            {
+                MessageBox.Show("NEX Base e Número de Jogadores devem ser números!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            TxtNomeCampanha.Clear();
-            TxtNexBaseJogadores.Clear();
-            TxtNumeroJogadores.Clear();
+            string nome = TxtNomeCampanha.Text.Trim();
+            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = "INSERT INTO Campanhas_Nova (Nome, NexBase, NumeroJogadores, IdUsuario) " +
+                                   "VALUES (@Nome, @NexBase, @NumeroJogadores, @IdUsuario)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", nome);
+                        cmd.Parameters.AddWithValue("@NexBase", nexBase);
+                        cmd.Parameters.AddWithValue("@NumeroJogadores", numeroJogadores);
+                        cmd.Parameters.AddWithValue("@IdUsuario", usuarioLogadoId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Campanha salva no banco com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpa os campos
+                TxtNomeCampanha.Clear();
+                TxtNexBaseJogadores.Clear();
+                TxtNumeroJogadores.Clear();
+
+                this.Close(); // fecha a janela
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar a campanha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

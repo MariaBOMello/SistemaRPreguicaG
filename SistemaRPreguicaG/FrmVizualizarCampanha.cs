@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace SistemaRPreguicaG
     public partial class FrmVizualizarCampanha : Form
     {
         private int IdCampanha;
+
         public FrmVizualizarCampanha(int idCampanha)
         {
             InitializeComponent();
@@ -21,22 +23,49 @@ namespace SistemaRPreguicaG
 
         private void FrmVizualizarCampanha_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet11.NPCs'. Você pode movê-la ou removê-la conforme necessário.
-            this.nPCsTableAdapter.Fill(this.rPGdbDataSet11.NPCs);
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet10.Monstros'. Você pode movê-la ou removê-la conforme necessário.
-            this.monstrosTableAdapter.Fill(this.rPGdbDataSet10.Monstros);
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet9.SessoesRPG'. Você pode movê-la ou removê-la conforme necessário.
-            this.sessoesRPGTableAdapter.Fill(this.rPGdbDataSet9.SessoesRPG);
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet8.Personagens'. Você pode movê-la ou removê-la conforme necessário.
-            this.personagensTableAdapter.Fill(this.rPGdbDataSet8.Personagens);
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet5.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
-            this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet5.Campanhas_Nova);
+            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
 
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                // Carrega Personagens da campanha
+                string queryPersonagens = "SELECT * FROM Personagens WHERE Id_Campanha = @IdCampanha";
+                SqlDataAdapter daPersonagens = new SqlDataAdapter(queryPersonagens, con);
+                daPersonagens.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
+                DataTable dtPersonagens = new DataTable();
+                daPersonagens.Fill(dtPersonagens);
+                DgvPersonagens.DataSource = dtPersonagens;
+
+                // Carrega Monstros da campanha
+                string queryMonstros = "SELECT * FROM Monstros WHERE Id_Campanha = @IdCampanha";
+                SqlDataAdapter daMonstros = new SqlDataAdapter(queryMonstros, con);
+                daMonstros.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
+                DataTable dtMonstros = new DataTable();
+                daMonstros.Fill(dtMonstros);
+                DgvMonstros.DataSource = dtMonstros;
+
+                // Carrega NPCs da campanha
+                string queryNPCs = "SELECT * FROM NPCs WHERE Id_Campanha = @IdCampanha";
+                SqlDataAdapter daNPCs = new SqlDataAdapter(queryNPCs, con);
+                daNPCs.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
+                DataTable dtNPCs = new DataTable();
+                daNPCs.Fill(dtNPCs);
+                DgvNPCs.DataSource = dtNPCs;
+
+                // Carrega Sessões da campanha
+                string querySessoes = "SELECT * FROM SessoesRPG WHERE Id_Campanha = @IdCampanha";
+                SqlDataAdapter daSessoes = new SqlDataAdapter(querySessoes, con);
+                daSessoes.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
+                DataTable dtSessoes = new DataTable();
+                daSessoes.Fill(dtSessoes);
+                DgvSessoes.DataSource = dtSessoes;
+            }
         }
 
         private void DgvMonstros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Pode deixar vazio
         }
     }
 }

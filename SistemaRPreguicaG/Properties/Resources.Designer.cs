@@ -303,6 +303,16 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap enigma {
+            get {
+                object obj = ResourceManager.GetObject("enigma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap espreitador_botao {
             get {
                 object obj = ResourceManager.GetObject("espreitador botao", resourceCulture);
@@ -363,6 +373,76 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__4_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__5_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__6_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kaiser {
             get {
                 object obj = ResourceManager.GetObject("kaiser", resourceCulture);
@@ -373,9 +453,29 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap livro_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("livro-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap o_estrangeiro {
             get {
                 object obj = ResourceManager.GetObject("o estrangeiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ritual1 {
+            get {
+                object obj = ResourceManager.GetObject("ritual1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

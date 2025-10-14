@@ -16,7 +16,7 @@ namespace SistemaRPreguicaG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTelaInicial());
+            Application.Run(new FrmTelaLogin());
         }
     }
 }

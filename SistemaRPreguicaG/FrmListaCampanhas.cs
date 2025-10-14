@@ -14,11 +14,13 @@ namespace SistemaRPreguicaG
     public partial class FrmListaCampanhas : Form
     {
         private List<Campanha> campanhas = new List<Campanha>();
+        private int usuarioLogadoId; // Id do usuário logado
 
-        public FrmListaCampanhas()
+        public FrmListaCampanhas(int idUsuario)
         {
             InitializeComponent();
-            CarregarCampanhas();  // chama o método ao abrir a janela
+            usuarioLogadoId = idUsuario;
+            CarregarCampanhas();
         }
 
         public void CarregarCampanhas()
@@ -26,78 +28,77 @@ namespace SistemaRPreguicaG
             string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
             campanhas.Clear();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
-                // Alterei apenas o nome da tabela para Campanhas_Nova e incluí o Id
-                string query = "SELECT Id, Nome, NexBase, NumeroJogadores FROM Campanhas_Nova";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    while (reader.Read())
-                    {
-                        Campanha c = new Campanha
-                        {
-                            Id = reader.GetInt32(0),          // adicionando o Id
-                            Nome = reader.GetString(1),
-                            NexBase = reader.GetInt32(2),
-                            NumeroJogadores = reader.GetInt32(3)
-                        };
+                    con.Open();
 
-                        campanhas.Add(c);
+                    string query = "SELECT Id, Nome, NexBase, NumeroJogadores FROM Campanhas_Nova WHERE IdUsuario=@IdUsuario";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@IdUsuario", usuarioLogadoId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Campanha c = new Campanha
+                                {
+                                    Id = reader.GetInt32(0),
+                                    Nome = reader.GetString(1),
+                                    NexBase = reader.GetInt32(2),
+                                    NumeroJogadores = reader.GetInt32(3)
+                                };
+                                campanhas.Add(c);
+                            }
+                        }
                     }
                 }
+
+                // Atualiza o DataGridView
+                DgvListaCampanhas.DataSource = null;
+                DgvListaCampanhas.DataSource = campanhas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar campanhas: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void FrmListaCampanhas_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet7.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
+            // Mantém os carregamentos do TableAdapter se você estiver usando DataSets
             this.campanhas_NovaTableAdapter1.Fill(this.rPGdbDataSet7.Campanhas_Nova);
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet1.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
             this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet1.Campanhas_Nova);
-            // Comentado ou atualizado conforme necessidade, pois a tabela antiga não existe
-            // this.campanhasTableAdapter.Fill(this.rPGdbDataSet.Campanhas);
         }
 
         private void BtnSelecionarCampanha_Click(object sender, EventArgs e)
         {
-            if (DgvListaCampanhas.SelectedRows != null)
+            if (DgvListaCampanhas.CurrentRow != null)
             {
-                // Usa o Id da tabela nova
-                FrmDadosCampanha frmDados = new FrmDadosCampanha(
-                    Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value)
-                );
+                int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
+                FrmDadosCampanha frmDados = new FrmDadosCampanha(idCampanha);
                 frmDados.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Por favor, selecione uma Campanha.");
+                MessageBox.Show("Por favor, selecione uma Campanha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        
-
         private void BtnVizualizarCampanha_Click(object sender, EventArgs e)
         {
-            if (DgvListaCampanhas.SelectedRows != null && DgvListaCampanhas.CurrentRow != null)
+            if (DgvListaCampanhas.CurrentRow != null)
             {
-                // Pega o Id da campanha selecionada
                 int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
-
-                // Abre a janela de visualização, passando o Id
                 FrmVizualizarCampanha frmVisualizar = new FrmVizualizarCampanha(idCampanha);
                 frmVisualizar.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Por favor, selecione uma Campanha.");
+                MessageBox.Show("Por favor, selecione uma Campanha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -105,28 +106,39 @@ namespace SistemaRPreguicaG
         {
             if (DgvListaCampanhas.CurrentRow == null)
             {
-                MessageBox.Show("Selecione uma campanha para inativar.");
+                MessageBox.Show("Selecione uma campanha para inativar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             int id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
 
-            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
-                string queryUpdate = "UPDATE Campanhas_Nova SET Estado_Atual = 'Inativa' WHERE Id = @Id";
-                using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@Id", id);
-                    cmd.ExecuteNonQuery();
+                    con.Open();
+                    string queryUpdate = "UPDATE Campanhas_Nova SET Estado_Atual = 'Inativa' WHERE Id = @Id";
+                    using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
+
+                MessageBox.Show("Campanha inativada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarCampanhas();
             }
-
-            MessageBox.Show("Campanha inativada com sucesso!");
-
-            // Atualiza a grid após a alteração
-            CarregarCampanhas();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inativar campanha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Mantido vazio
+        }
+
     }
 }

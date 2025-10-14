@@ -34,6 +34,8 @@
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nexBaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroJogadoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.campanhasNovaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rPGdbDataSet7 = new SistemaRPreguicaG.RPGdbDataSet7();
             this.campanhasNovaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rPGdbDataSet1 = new SistemaRPreguicaG.RPGdbDataSet1();
             this.campanhasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,17 +46,15 @@
             this.campanhas_NovaTableAdapter = new SistemaRPreguicaG.RPGdbDataSet1TableAdapters.Campanhas_NovaTableAdapter();
             this.BtnVizualizarCampanha = new System.Windows.Forms.Button();
             this.BtnInativarCampanha = new System.Windows.Forms.Button();
-            this.rPGdbDataSet7 = new SistemaRPreguicaG.RPGdbDataSet7();
-            this.campanhasNovaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.campanhas_NovaTableAdapter1 = new SistemaRPreguicaG.RPGdbDataSet7TableAdapters.Campanhas_NovaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvListaCampanhas
@@ -98,6 +98,16 @@
             this.numeroJogadoresDataGridViewTextBoxColumn.DataPropertyName = "NumeroJogadores";
             this.numeroJogadoresDataGridViewTextBoxColumn.HeaderText = "NumeroJogadores";
             this.numeroJogadoresDataGridViewTextBoxColumn.Name = "numeroJogadoresDataGridViewTextBoxColumn";
+            // 
+            // campanhasNovaBindingSource1
+            // 
+            this.campanhasNovaBindingSource1.DataMember = "Campanhas_Nova";
+            this.campanhasNovaBindingSource1.DataSource = this.rPGdbDataSet7;
+            // 
+            // rPGdbDataSet7
+            // 
+            this.rPGdbDataSet7.DataSetName = "RPGdbDataSet7";
+            this.rPGdbDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // campanhasNovaBindingSource
             // 
@@ -174,16 +184,6 @@
             this.BtnInativarCampanha.UseVisualStyleBackColor = true;
             this.BtnInativarCampanha.Click += new System.EventHandler(this.BtnInativarCampanha_Click);
             // 
-            // rPGdbDataSet7
-            // 
-            this.rPGdbDataSet7.DataSetName = "RPGdbDataSet7";
-            this.rPGdbDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // campanhasNovaBindingSource1
-            // 
-            this.campanhasNovaBindingSource1.DataMember = "Campanhas_Nova";
-            this.campanhasNovaBindingSource1.DataSource = this.rPGdbDataSet7;
-            // 
             // campanhas_NovaTableAdapter1
             // 
             this.campanhas_NovaTableAdapter1.ClearBeforeFill = true;
@@ -193,7 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.baixados;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(780, 450);
             this.Controls.Add(this.BtnInativarCampanha);
             this.Controls.Add(this.BtnVizualizarCampanha);
             this.Controls.Add(this.BtnSelecionarCampanha);
@@ -202,13 +202,13 @@
             this.Text = "FrmListaCampanhas";
             this.Load += new System.EventHandler(this.FrmListaCampanhas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

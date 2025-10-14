@@ -71,6 +71,12 @@
     <Compile Include="FrmPersonagens.Designer.cs">
       <DependentUpon>FrmPersonagens.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTelaCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTelaCadastro.Designer.cs">
+      <DependentUpon>FrmTelaCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="FrmCriarCampanha.Designer.cs">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTelaLogin.Designer.cs">
+      <DependentUpon>FrmTelaLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVizualizarCampanha.cs">
       <SubType>Form</SubType>
@@ -161,8 +173,14 @@
     <EmbeddedResource Include="FrmListaCampanhas.resx">
       <DependentUpon>FrmListaCampanhas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTelaCadastro.resx">
+      <DependentUpon>FrmTelaCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTelaInicial.resx">
       <DependentUpon>FrmTelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTelaLogin.resx">
+      <DependentUpon>FrmTelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVizualizarCampanha.resx">
       <DependentUpon>FrmVizualizarCampanha.cs</DependentUpon>
@@ -417,6 +435,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Design sem nome %2814%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enigma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ritual1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livro-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserir um título %286%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

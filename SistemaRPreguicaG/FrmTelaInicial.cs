@@ -12,9 +12,14 @@ namespace SistemaRPreguicaG
 {
     public partial class FrmTelaInicial : Form
     {
-        public FrmTelaInicial()
+        private int usuarioLogadoId;
+        private string usuarioLogadoEmail;
+
+        public FrmTelaInicial(int idUsuario, string emailUsuario)
         {
             InitializeComponent();
+            usuarioLogadoId = idUsuario;
+            usuarioLogadoEmail = emailUsuario;
         }
 
         private void btnExti_Click(object sender, EventArgs e)
@@ -24,16 +29,14 @@ namespace SistemaRPreguicaG
 
         private void BtnNovaCampanha_Click(object sender, EventArgs e)
         {
-            FrmCriarCampanha CriarCamp = new FrmCriarCampanha();
-            CriarCamp.ShowDialog();
-
+            FrmCriarCampanha criarCamp = new FrmCriarCampanha(usuarioLogadoId);
+            criarCamp.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmListaCampanhas ListaCamp = new FrmListaCampanhas();
-            ListaCamp.ShowDialog();
-
+            FrmListaCampanhas listaCamp = new FrmListaCampanhas(usuarioLogadoId);
+            listaCamp.ShowDialog();
         }
     }
 }

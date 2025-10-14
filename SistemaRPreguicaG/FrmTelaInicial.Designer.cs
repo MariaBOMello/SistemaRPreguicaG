@@ -43,7 +43,7 @@
             this.btnExti.BackColor = System.Drawing.Color.Indigo;
             this.btnExti.Font = new System.Drawing.Font("Reem Kufi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExti.ForeColor = System.Drawing.Color.Lavender;
-            this.btnExti.Location = new System.Drawing.Point(684, 12);
+            this.btnExti.Location = new System.Drawing.Point(662, 323);
             this.btnExti.Name = "btnExti";
             this.btnExti.Size = new System.Drawing.Size(104, 57);
             this.btnExti.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.BtnNovaCampanha.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnNovaCampanha.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__2_;
-            this.BtnNovaCampanha.Location = new System.Drawing.Point(23, 55);
+            this.BtnNovaCampanha.Location = new System.Drawing.Point(24, 55);
             this.BtnNovaCampanha.Name = "BtnNovaCampanha";
             this.BtnNovaCampanha.Size = new System.Drawing.Size(172, 161);
             this.BtnNovaCampanha.TabIndex = 1;
@@ -76,7 +76,7 @@
             // button1
             // 
             this.button1.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__3_;
-            this.button1.Location = new System.Drawing.Point(600, 253);
+            this.button1.Location = new System.Drawing.Point(613, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 161);
             this.button1.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(597, 230);
+            this.label1.Location = new System.Drawing.Point(609, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 20);
             this.label1.TabIndex = 4;
@@ -111,9 +111,8 @@
             this.label3.ForeColor = System.Drawing.Color.BlueViolet;
             this.label3.Location = new System.Drawing.Point(214, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(329, 85);
+            this.label3.Size = new System.Drawing.Size(0, 85);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Entre o real";
             // 
             // label4
             // 
@@ -123,9 +122,8 @@
             this.label4.ForeColor = System.Drawing.Color.BlueViolet;
             this.label4.Location = new System.Drawing.Point(322, 100);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(414, 85);
+            this.label4.Size = new System.Drawing.Size(0, 85);
             this.label4.TabIndex = 7;
-            this.label4.Text = "e o Paranormal";
             // 
             // FrmTelaInicial
             // 

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using System.Windows.Forms;
+using System;
 
 namespace SistemaRPreguicaG
 {
@@ -49,82 +42,85 @@ namespace SistemaRPreguicaG
 
             string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
-
-                // ========== SALVAR PERSONAGEM ==========
-                string queryPersonagem = "INSERT INTO Personagens (Nome, Classe, Origem, Observacoes, Id_Campanha) " +
-                                         "VALUES (@Nome, @Classe, @Origem, @Observacoes, @IdCampanha)";
-                using (SqlCommand cmd = new SqlCommand(queryPersonagem, con))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@Nome", personagemNome);
-                    cmd.Parameters.AddWithValue("@Classe", personagemClasse);
-                    cmd.Parameters.AddWithValue("@Origem", personagemOrigem);
-                    cmd.Parameters.AddWithValue("@Observacoes", obsPersonagem);
-                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
-                    cmd.ExecuteNonQuery();
+                    con.Open();
+
+                    // SALVAR PERSONAGEM
+                    string queryPersonagem = "INSERT INTO Personagens (Nome, Classe, Origem, Observacoes, Id_Campanha) " +
+                                             "VALUES (@Nome, @Classe, @Origem, @Observacoes, @IdCampanha)";
+                    using (SqlCommand cmd = new SqlCommand(queryPersonagem, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", personagemNome);
+                        cmd.Parameters.AddWithValue("@Classe", personagemClasse);
+                        cmd.Parameters.AddWithValue("@Origem", personagemOrigem);
+                        cmd.Parameters.AddWithValue("@Observacoes", obsPersonagem);
+                        cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // SALVAR MONSTRO
+                    string queryMonstro = "INSERT INTO Monstros (Nome, VD, PV, Defesa, Observacoes, Id_Campanha) " +
+                                          "VALUES (@Nome, @VD, @PV, @Defesa, @Observacoes, @IdCampanha)";
+                    using (SqlCommand cmd = new SqlCommand(queryMonstro, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", monstroNome);
+                        cmd.Parameters.AddWithValue("@VD", monstroVD);
+                        cmd.Parameters.AddWithValue("@PV", monstroPV);
+                        cmd.Parameters.AddWithValue("@Defesa", monstroDefesa);
+                        cmd.Parameters.AddWithValue("@Observacoes", obsMonstro);
+                        cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // SALVAR NPC
+                    string queryNPC = "INSERT INTO NPCs (Nome, Funcao, Observacoes, Id_Campanha) " +
+                                      "VALUES (@Nome, @Funcao, @Observacoes, @IdCampanha)";
+                    using (SqlCommand cmd = new SqlCommand(queryNPC, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", npcNome);
+                        cmd.Parameters.AddWithValue("@Funcao", npcFuncao);
+                        cmd.Parameters.AddWithValue("@Observacoes", obsNpc);
+                        cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // SALVAR SESSÃO
+                    string querySessao = "INSERT INTO SessoesRPG (Id_Campanha, DataInicio, DataFim, Observacoes) " +
+                                         "VALUES (@IdCampanha, @DataInicio, @DataFim, @Observacoes)";
+                    using (SqlCommand cmd = new SqlCommand(querySessao, con))
+                    {
+                        cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
+                        cmd.Parameters.AddWithValue("@DataInicio", inicioSessao);
+                        cmd.Parameters.AddWithValue("@DataFim", fimSessao);
+                        cmd.Parameters.AddWithValue("@Observacoes", obsSessao);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
 
-                // ========== SALVAR MONSTRO ==========
-                string queryMonstro = "INSERT INTO Monstros (Nome, VD, PV, Defesa, Observacoes, Id_Campanha) " +
-                                      "VALUES (@Nome, @VD, @PV, @Defesa, @Observacoes, @IdCampanha)";
-                using (SqlCommand cmd = new SqlCommand(queryMonstro, con))
-                {
-                    cmd.Parameters.AddWithValue("@Nome", monstroNome);
-                    cmd.Parameters.AddWithValue("@VD", monstroVD);
-                    cmd.Parameters.AddWithValue("@PV", monstroPV);
-                    cmd.Parameters.AddWithValue("@Defesa", monstroDefesa);
-                    cmd.Parameters.AddWithValue("@Observacoes", obsMonstro);
-                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
-                    cmd.ExecuteNonQuery();
-                }
+                MessageBox.Show("Todos os dados foram salvos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // ========== SALVAR NPC ==========
-                string queryNPC = "INSERT INTO NPCs (Nome, Funcao, Observacoes, Id_Campanha) " +
-                                  "VALUES (@Nome, @Funcao, @Observacoes, @IdCampanha)";
-                using (SqlCommand cmd = new SqlCommand(queryNPC, con))
-                {
-                    cmd.Parameters.AddWithValue("@Nome", npcNome);
-                    cmd.Parameters.AddWithValue("@Funcao", npcFuncao);
-                    cmd.Parameters.AddWithValue("@Observacoes", obsNpc);
-                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
-                    cmd.ExecuteNonQuery();
-                }
-
-                // ========== SALVAR SESSÃO ==========
-                string querySessao = "INSERT INTO SessoesRPG (Id_Campanha, DataInicio, DataFim, Observacoes) " +
-                                     "VALUES (@IdCampanha, @DataInicio, @DataFim, @Observacoes)";
-                using (SqlCommand cmd = new SqlCommand(querySessao, con))
-                {
-                    cmd.Parameters.AddWithValue("@IdCampanha", IDcampanha);
-                    cmd.Parameters.AddWithValue("@DataInicio", inicioSessao);
-                    cmd.Parameters.AddWithValue("@DataFim", fimSessao);
-                    cmd.Parameters.AddWithValue("@Observacoes", obsSessao);
-                    cmd.ExecuteNonQuery();
-                }
+                // Limpar campos
+                TxtPersonagemNome.Clear();
+                TxtMonstroNome.Clear();
+                TxtVD.Clear();
+                TxtPV.Clear();
+                TxtDefesa.Clear();
+                TxtNpcNome.Clear();
+                TxtFuncao.Clear();
             }
-
-            MessageBox.Show("Todos os dados foram salvos com sucesso!");
-
-            // Limpar campos
-            TxtPersonagemNome.Clear();
-            TxtMonstroNome.Clear();
-            TxtVD.Clear();
-            TxtPV.Clear();
-            TxtDefesa.Clear();
-            TxtNpcNome.Clear();
-            TxtFuncao.Clear();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void TxtClasse_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // Mantém o label para não dar erro
         private void label12_Click(object sender, EventArgs e)
         {
-
+            // Sem ação, apenas para manter o evento
         }
     }
 }
