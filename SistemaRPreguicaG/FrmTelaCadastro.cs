@@ -18,10 +18,6 @@ namespace SistemaRPreguicaG
             InitializeComponent();
         }
 
-        
-
-       
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text.Trim();
@@ -50,7 +46,7 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Cadastro concluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close(); // fecha e retorna para a tela de login
+                        this.Close();
                     }
                 }
                 catch (Exception ex)
@@ -65,5 +61,4 @@ namespace SistemaRPreguicaG
             this.Close();
         }
     }
-
 }

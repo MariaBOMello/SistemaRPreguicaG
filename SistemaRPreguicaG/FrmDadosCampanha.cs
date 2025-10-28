@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System;
 
+
 namespace SistemaRPreguicaG
 {
     public partial class FrmDadosCampanha : Form
@@ -14,27 +15,34 @@ namespace SistemaRPreguicaG
             IDcampanha = idcampanha;
         }
 
+        private bool CampanhaExiste(int idCampanha, SqlConnection con)
+        {
+            string query = "SELECT COUNT(1) FROM Campanhas_Unificada WHERE Id = @IdCampanha";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@IdCampanha", idCampanha);
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
         private void BtnSalvarDados_Click(object sender, EventArgs e)
         {
-            // ========== Personagem ==========
             string personagemNome = TxtPersonagemNome.Text;
             string personagemClasse = CbxClasse.Text;
             string personagemOrigem = CbxOrigem.Text;
             string obsPersonagem = TxtObservacoesPersonagens.Text;
 
-            // ========== Monstro ==========
             string monstroNome = TxtMonstroNome.Text;
-            int monstroVD = int.Parse(TxtVD.Text);
-            int monstroPV = int.Parse(TxtPV.Text);
-            int monstroDefesa = int.Parse(TxtDefesa.Text);
+            int monstroVD = int.TryParse(TxtVD.Text, out int vd) ? vd : 0;
+            int monstroPV = int.TryParse(TxtPV.Text, out int pv) ? pv : 0;
+            int monstroDefesa = int.TryParse(TxtDefesa.Text, out int def) ? def : 0;
             string obsMonstro = TxtObservacoesMonstros.Text;
 
-            // ========== NPC ==========
             string npcNome = TxtNpcNome.Text;
             string npcFuncao = TxtFuncao.Text;
             string obsNpc = TxtObservacoesNPCs.Text;
 
-            // ========== Sessão ==========
             DateTime dataSelecionada = monthCalendar1.SelectionStart;
             DateTime inicioSessao = dataSelecionada.Date + DtpInicio.Value.TimeOfDay;
             DateTime fimSessao = dataSelecionada.Date + DtpFim.Value.TimeOfDay;
@@ -48,7 +56,12 @@ namespace SistemaRPreguicaG
                 {
                     con.Open();
 
-                    // SALVAR PERSONAGEM
+                    if (!CampanhaExiste(IDcampanha, con))
+                    {
+                        MessageBox.Show("A campanha selecionada não existe. Não é possível salvar os dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     string queryPersonagem = "INSERT INTO Personagens (Nome, Classe, Origem, Observacoes, Id_Campanha) " +
                                              "VALUES (@Nome, @Classe, @Origem, @Observacoes, @IdCampanha)";
                     using (SqlCommand cmd = new SqlCommand(queryPersonagem, con))
@@ -61,7 +74,6 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
                     }
 
-                    // SALVAR MONSTRO
                     string queryMonstro = "INSERT INTO Monstros (Nome, VD, PV, Defesa, Observacoes, Id_Campanha) " +
                                           "VALUES (@Nome, @VD, @PV, @Defesa, @Observacoes, @IdCampanha)";
                     using (SqlCommand cmd = new SqlCommand(queryMonstro, con))
@@ -75,7 +87,6 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
                     }
 
-                    // SALVAR NPC
                     string queryNPC = "INSERT INTO NPCs (Nome, Funcao, Observacoes, Id_Campanha) " +
                                       "VALUES (@Nome, @Funcao, @Observacoes, @IdCampanha)";
                     using (SqlCommand cmd = new SqlCommand(queryNPC, con))
@@ -87,7 +98,6 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
                     }
 
-                    // SALVAR SESSÃO
                     string querySessao = "INSERT INTO SessoesRPG (Id_Campanha, DataInicio, DataFim, Observacoes) " +
                                          "VALUES (@IdCampanha, @DataInicio, @DataFim, @Observacoes)";
                     using (SqlCommand cmd = new SqlCommand(querySessao, con))
@@ -101,15 +111,6 @@ namespace SistemaRPreguicaG
                 }
 
                 MessageBox.Show("Todos os dados foram salvos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpar campos
-                TxtPersonagemNome.Clear();
-                TxtMonstroNome.Clear();
-                TxtVD.Clear();
-                TxtPV.Clear();
-                TxtDefesa.Clear();
-                TxtNpcNome.Clear();
-                TxtFuncao.Clear();
             }
             catch (Exception ex)
             {
@@ -117,10 +118,6 @@ namespace SistemaRPreguicaG
             }
         }
 
-        // Mantém o label para não dar erro
-        private void label12_Click(object sender, EventArgs e)
-        {
-            // Sem ação, apenas para manter o evento
-        }
+        private void label12_Click(object sender, EventArgs e) { }
     }
 }

@@ -14,7 +14,7 @@ namespace SistemaRPreguicaG
     public partial class FrmListaCampanhas : Form
     {
         private List<Campanha> campanhas = new List<Campanha>();
-        private int usuarioLogadoId; // Id do usuário logado
+        private int usuarioLogadoId;
 
         public FrmListaCampanhas(int idUsuario)
         {
@@ -33,8 +33,7 @@ namespace SistemaRPreguicaG
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-
-                    string query = "SELECT Id, Nome, NexBase, NumeroJogadores FROM Campanhas_Nova WHERE IdUsuario=@IdUsuario";
+                    string query = "SELECT Id, Nome, NexBase, NumeroJogadores FROM Campanhas_Unificada WHERE IdUsuario=@IdUsuario";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -57,7 +56,6 @@ namespace SistemaRPreguicaG
                     }
                 }
 
-                // Atualiza o DataGridView
                 DgvListaCampanhas.DataSource = null;
                 DgvListaCampanhas.DataSource = campanhas;
             }
@@ -67,13 +65,6 @@ namespace SistemaRPreguicaG
             }
         }
 
-        private void FrmListaCampanhas_Load(object sender, EventArgs e)
-        {
-            // Mantém os carregamentos do TableAdapter se você estiver usando DataSets
-            this.campanhas_NovaTableAdapter1.Fill(this.rPGdbDataSet7.Campanhas_Nova);
-            this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet1.Campanhas_Nova);
-        }
-
         private void BtnSelecionarCampanha_Click(object sender, EventArgs e)
         {
             if (DgvListaCampanhas.CurrentRow != null)
@@ -81,6 +72,7 @@ namespace SistemaRPreguicaG
                 int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
                 FrmDadosCampanha frmDados = new FrmDadosCampanha(idCampanha);
                 frmDados.ShowDialog();
+                CarregarCampanhas();
             }
             else
             {
@@ -118,7 +110,7 @@ namespace SistemaRPreguicaG
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string queryUpdate = "UPDATE Campanhas_Nova SET Estado_Atual = 'Inativa' WHERE Id = @Id";
+                    string queryUpdate = "UPDATE Campanhas_Unificada SET Estado_Atual = 'Inativa' WHERE Id = @Id";
                     using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
                     {
                         cmd.Parameters.AddWithValue("@Id", id);
@@ -135,10 +127,6 @@ namespace SistemaRPreguicaG
             }
         }
 
-        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Mantido vazio
-        }
-
+        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

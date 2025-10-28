@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace SistemaRPreguicaG
 {
     public partial class FrmCriarCampanha : Form
@@ -23,7 +22,6 @@ namespace SistemaRPreguicaG
 
         private void BtnSalvarNovaCampanha_Click(object sender, EventArgs e)
         {
-            // Validação básica
             if (string.IsNullOrWhiteSpace(TxtNomeCampanha.Text) ||
                 string.IsNullOrWhiteSpace(TxtNexBaseJogadores.Text) ||
                 string.IsNullOrWhiteSpace(TxtNumeroJogadores.Text))
@@ -44,11 +42,15 @@ namespace SistemaRPreguicaG
 
             try
             {
+                int idGerado;
+
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "INSERT INTO Campanhas_Nova (Nome, NexBase, NumeroJogadores, IdUsuario) " +
-                                   "VALUES (@Nome, @NexBase, @NumeroJogadores, @IdUsuario)";
+
+                    string query = "INSERT INTO Campanhas_Unificada (Nome, NexBase, NumeroJogadores, IdUsuario, Estado_Atual) " +
+                                   "VALUES (@Nome, @NexBase, @NumeroJogadores, @IdUsuario, 'Ativa'); " +
+                                   "SELECT CAST(SCOPE_IDENTITY() AS INT);";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -57,18 +59,20 @@ namespace SistemaRPreguicaG
                         cmd.Parameters.AddWithValue("@NumeroJogadores", numeroJogadores);
                         cmd.Parameters.AddWithValue("@IdUsuario", usuarioLogadoId);
 
-                        cmd.ExecuteNonQuery();
+                        idGerado = (int)cmd.ExecuteScalar();
                     }
                 }
 
-                MessageBox.Show("Campanha salva no banco com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campanha criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Limpa os campos
                 TxtNomeCampanha.Clear();
                 TxtNexBaseJogadores.Clear();
                 TxtNumeroJogadores.Clear();
 
-                this.Close(); // fecha a janela
+                FrmDadosCampanha frmDados = new FrmDadosCampanha(idGerado);
+                frmDados.ShowDialog();
+
+                this.Close();
             }
             catch (Exception ex)
             {

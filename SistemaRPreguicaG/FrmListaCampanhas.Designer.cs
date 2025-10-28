@@ -200,7 +200,6 @@
             this.Controls.Add(this.DgvListaCampanhas);
             this.Name = "FrmListaCampanhas";
             this.Text = "FrmListaCampanhas";
-            this.Load += new System.EventHandler(this.FrmListaCampanhas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).EndInit();

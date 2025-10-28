@@ -18,11 +18,6 @@ namespace SistemaRPreguicaG
             InitializeComponent();
         }
 
-         
-        
-
-
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text.Trim();
@@ -52,7 +47,6 @@ namespace SistemaRPreguicaG
                             int idUsuario = reader.GetInt32(0);
                             string emailUsuario = reader.GetString(1);
 
-                            // Abre a tela inicial passando os dados do usuário
                             FrmTelaInicial telaInicial = new FrmTelaInicial(idUsuario, emailUsuario);
                             telaInicial.Show();
                             this.Hide();

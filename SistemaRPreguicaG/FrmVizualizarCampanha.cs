@@ -25,47 +25,51 @@ namespace SistemaRPreguicaG
         {
             string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
 
-                // Carrega Personagens da campanha
-                string queryPersonagens = "SELECT * FROM Personagens WHERE Id_Campanha = @IdCampanha";
-                SqlDataAdapter daPersonagens = new SqlDataAdapter(queryPersonagens, con);
-                daPersonagens.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
-                DataTable dtPersonagens = new DataTable();
-                daPersonagens.Fill(dtPersonagens);
-                DgvPersonagens.DataSource = dtPersonagens;
+                    using (SqlDataAdapter daPersonagens = new SqlDataAdapter("SELECT * FROM Personagens WHERE Id_Campanha = @IdCampanha", con))
+                    {
+                        daPersonagens.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
+                        DataTable dtPersonagens = new DataTable();
+                        daPersonagens.Fill(dtPersonagens);
+                        DgvPersonagens.DataSource = dtPersonagens;
+                    }
 
-                // Carrega Monstros da campanha
-                string queryMonstros = "SELECT * FROM Monstros WHERE Id_Campanha = @IdCampanha";
-                SqlDataAdapter daMonstros = new SqlDataAdapter(queryMonstros, con);
-                daMonstros.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
-                DataTable dtMonstros = new DataTable();
-                daMonstros.Fill(dtMonstros);
-                DgvMonstros.DataSource = dtMonstros;
+                    using (SqlDataAdapter daMonstros = new SqlDataAdapter("SELECT * FROM Monstros WHERE Id_Campanha = @IdCampanha", con))
+                    {
+                        daMonstros.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
+                        DataTable dtMonstros = new DataTable();
+                        daMonstros.Fill(dtMonstros);
+                        DgvMonstros.DataSource = dtMonstros;
+                    }
 
-                // Carrega NPCs da campanha
-                string queryNPCs = "SELECT * FROM NPCs WHERE Id_Campanha = @IdCampanha";
-                SqlDataAdapter daNPCs = new SqlDataAdapter(queryNPCs, con);
-                daNPCs.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
-                DataTable dtNPCs = new DataTable();
-                daNPCs.Fill(dtNPCs);
-                DgvNPCs.DataSource = dtNPCs;
+                    using (SqlDataAdapter daNPCs = new SqlDataAdapter("SELECT * FROM NPCs WHERE Id_Campanha = @IdCampanha", con))
+                    {
+                        daNPCs.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
+                        DataTable dtNPCs = new DataTable();
+                        daNPCs.Fill(dtNPCs);
+                        DgvNPCs.DataSource = dtNPCs;
+                    }
 
-                // Carrega Sessões da campanha
-                string querySessoes = "SELECT * FROM SessoesRPG WHERE Id_Campanha = @IdCampanha";
-                SqlDataAdapter daSessoes = new SqlDataAdapter(querySessoes, con);
-                daSessoes.SelectCommand.Parameters.AddWithValue("@IdCampanha", IdCampanha);
-                DataTable dtSessoes = new DataTable();
-                daSessoes.Fill(dtSessoes);
-                DgvSessoes.DataSource = dtSessoes;
+                    using (SqlDataAdapter daSessoes = new SqlDataAdapter("SELECT * FROM SessoesRPG WHERE Id_Campanha = @IdCampanha", con))
+                    {
+                        daSessoes.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
+                        DataTable dtSessoes = new DataTable();
+                        daSessoes.Fill(dtSessoes);
+                        DgvSessoes.DataSource = dtSessoes;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os dados da campanha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void DgvMonstros_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Pode deixar vazio
-        }
+        private void DgvMonstros_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }
