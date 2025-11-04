@@ -38,5 +38,12 @@ namespace SistemaRPreguicaG
             FrmListaCampanhas listaCamp = new FrmListaCampanhas(usuarioLogadoId);
             listaCamp.ShowDialog();
         }
+
+        // Evento para carregar a tela inicial
+        private void FrmTelaInicial_Load(object sender, EventArgs e)
+        {
+            // Exemplo: mostrar o e-mail do usuário logado na tela (opcional)
+            this.Text = $"Bem-vindo - {usuarioLogadoEmail}";
+        }
     }
 }

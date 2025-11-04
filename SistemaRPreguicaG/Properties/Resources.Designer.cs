@@ -113,6 +113,16 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cadastrar_Jogadores {
+            get {
+                object obj = ResourceManager.GetObject("Cadastrar Jogadores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carente {
             get {
                 object obj = ResourceManager.GetObject("carente", resourceCulture);

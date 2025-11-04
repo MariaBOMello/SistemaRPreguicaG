@@ -48,9 +48,10 @@ namespace SistemaRPreguicaG
                 {
                     con.Open();
 
-                    string query = "INSERT INTO Campanhas_Unificada (Nome, NexBase, NumeroJogadores, IdUsuario, Estado_Atual) " +
-                                   "VALUES (@Nome, @NexBase, @NumeroJogadores, @IdUsuario, 'Ativa'); " +
-                                   "SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                    string query = @"INSERT INTO Campanhas_Unificada 
+                                    (Nome, NexBase, NumeroJogadores, IdUsuario, Estado_Atual)
+                                    VALUES (@Nome, @NexBase, @NumeroJogadores, @IdUsuario, 'Ativa');
+                                    SELECT CAST(SCOPE_IDENTITY() AS INT);";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -78,6 +79,36 @@ namespace SistemaRPreguicaG
             {
                 MessageBox.Show("Erro ao salvar a campanha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmCriarCampanha_Load(object sender, EventArgs e)
+        {
+            // Pode ser usado futuramente para carregar dados padrões
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // Evento do label mantido (não apagar)
+        }
+
+        private void TxtNomeCampanha_TextChanged(object sender, EventArgs e)
+        {
+            // Evento de digitação do nome (não apagar)
+        }
+
+        private void TxtNexBaseJogadores_TextChanged(object sender, EventArgs e)
+        {
+            // Evento de digitação do NEX (não apagar)
+        }
+
+        private void TxtNumeroJogadores_TextChanged(object sender, EventArgs e)
+        {
+            // Evento de digitação do número de jogadores (não apagar)
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

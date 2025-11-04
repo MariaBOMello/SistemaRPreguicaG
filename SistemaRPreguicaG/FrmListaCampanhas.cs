@@ -33,7 +33,9 @@ namespace SistemaRPreguicaG
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT Id, Nome, NexBase, NumeroJogadores FROM Campanhas_Unificada WHERE IdUsuario=@IdUsuario";
+                    string query = @"SELECT Id, Nome, NexBase, NumeroJogadores 
+                                     FROM Campanhas_Unificada 
+                                     WHERE IdUsuario=@IdUsuario AND Estado_Atual = 'Ativa'";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {

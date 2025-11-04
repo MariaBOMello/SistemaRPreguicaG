@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Campanha.cs" />
+    <Compile Include="FrmCadastroJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroJogadores.Designer.cs">
+      <DependentUpon>FrmCadastroJogadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCampanhasExistentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet9.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmCadastroJogadores.resx">
+      <DependentUpon>FrmCadastroJogadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCriarCampanha.resx">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,6 +474,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Inserir um título %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastrar Jogadores.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

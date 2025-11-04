@@ -56,12 +56,14 @@ namespace SistemaRPreguicaG
                 {
                     con.Open();
 
+                    // 🔍 Verifica se a campanha existe
                     if (!CampanhaExiste(IDcampanha, con))
                     {
                         MessageBox.Show("A campanha selecionada não existe. Não é possível salvar os dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
+                    // 🧙‍♂️ Inserir Personagem
                     string queryPersonagem = "INSERT INTO Personagens (Nome, Classe, Origem, Observacoes, Id_Campanha) " +
                                              "VALUES (@Nome, @Classe, @Origem, @Observacoes, @IdCampanha)";
                     using (SqlCommand cmd = new SqlCommand(queryPersonagem, con))
@@ -74,6 +76,7 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
                     }
 
+                    // 🐉 Inserir Monstro
                     string queryMonstro = "INSERT INTO Monstros (Nome, VD, PV, Defesa, Observacoes, Id_Campanha) " +
                                           "VALUES (@Nome, @VD, @PV, @Defesa, @Observacoes, @IdCampanha)";
                     using (SqlCommand cmd = new SqlCommand(queryMonstro, con))
@@ -87,6 +90,7 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
                     }
 
+                    // 🧔 Inserir NPC
                     string queryNPC = "INSERT INTO NPCs (Nome, Funcao, Observacoes, Id_Campanha) " +
                                       "VALUES (@Nome, @Funcao, @Observacoes, @IdCampanha)";
                     using (SqlCommand cmd = new SqlCommand(queryNPC, con))
@@ -98,6 +102,7 @@ namespace SistemaRPreguicaG
                         cmd.ExecuteNonQuery();
                     }
 
+                    // 🗓️ Inserir Sessão
                     string querySessao = "INSERT INTO SessoesRPG (Id_Campanha, DataInicio, DataFim, Observacoes) " +
                                          "VALUES (@IdCampanha, @DataInicio, @DataFim, @Observacoes)";
                     using (SqlCommand cmd = new SqlCommand(querySessao, con))
@@ -112,9 +117,13 @@ namespace SistemaRPreguicaG
 
                 MessageBox.Show("Todos os dados foram salvos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Erro SQL ao salvar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao salvar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro geral ao salvar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

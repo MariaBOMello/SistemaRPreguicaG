@@ -73,14 +73,17 @@
             this.rPGdbDataSet11 = new SistemaRPreguicaG.RPGdbDataSet11();
             this.LblVizPersonagens = new System.Windows.Forms.Label();
             this.personagensTableAdapter = new SistemaRPreguicaG.RPGdbDataSet8TableAdapters.PersonagensTableAdapter();
-            this.LblVizSessoes = new System.Windows.Forms.Label();
             this.sessoesRPGTableAdapter = new SistemaRPreguicaG.RPGdbDataSet9TableAdapters.SessoesRPGTableAdapter();
-            this.LblVizMonstros = new System.Windows.Forms.Label();
             this.monstrosTableAdapter = new SistemaRPreguicaG.RPGdbDataSet10TableAdapters.MonstrosTableAdapter();
             this.nPCsTableAdapter = new SistemaRPreguicaG.RPGdbDataSet11TableAdapters.NPCsTableAdapter();
-            this.LblVizNPCs = new System.Windows.Forms.Label();
-            this.BtnInativarGeral = new System.Windows.Forms.Button();
             this.LblVizInativar = new System.Windows.Forms.Label();
+            this.BtnInativarPersonagem = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnInativarMonstro = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnInativarSessao = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BtnInativarNPC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet5BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource)).BeginInit();
@@ -391,12 +394,12 @@
             // LblVizPersonagens
             // 
             this.LblVizPersonagens.AutoSize = true;
-            this.LblVizPersonagens.BackColor = System.Drawing.Color.Lime;
-            this.LblVizPersonagens.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblVizPersonagens.BackColor = System.Drawing.Color.Green;
+            this.LblVizPersonagens.Font = new System.Drawing.Font("ScriptC", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblVizPersonagens.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LblVizPersonagens.Location = new System.Drawing.Point(12, 9);
+            this.LblVizPersonagens.Location = new System.Drawing.Point(28, 9);
             this.LblVizPersonagens.Name = "LblVizPersonagens";
-            this.LblVizPersonagens.Size = new System.Drawing.Size(111, 21);
+            this.LblVizPersonagens.Size = new System.Drawing.Size(95, 22);
             this.LblVizPersonagens.TabIndex = 6;
             this.LblVizPersonagens.Text = "Personagens";
             // 
@@ -404,33 +407,9 @@
             // 
             this.personagensTableAdapter.ClearBeforeFill = true;
             // 
-            // LblVizSessoes
-            // 
-            this.LblVizSessoes.AutoSize = true;
-            this.LblVizSessoes.BackColor = System.Drawing.Color.Lime;
-            this.LblVizSessoes.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVizSessoes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LblVizSessoes.Location = new System.Drawing.Point(367, 121);
-            this.LblVizSessoes.Name = "LblVizSessoes";
-            this.LblVizSessoes.Size = new System.Drawing.Size(72, 21);
-            this.LblVizSessoes.TabIndex = 7;
-            this.LblVizSessoes.Text = "Sessões";
-            // 
             // sessoesRPGTableAdapter
             // 
             this.sessoesRPGTableAdapter.ClearBeforeFill = true;
-            // 
-            // LblVizMonstros
-            // 
-            this.LblVizMonstros.AutoSize = true;
-            this.LblVizMonstros.BackColor = System.Drawing.Color.Lime;
-            this.LblVizMonstros.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVizMonstros.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LblVizMonstros.Location = new System.Drawing.Point(12, 274);
-            this.LblVizMonstros.Name = "LblVizMonstros";
-            this.LblVizMonstros.Size = new System.Drawing.Size(87, 21);
-            this.LblVizMonstros.TabIndex = 8;
-            this.LblVizMonstros.Text = "Monstros";
             // 
             // monstrosTableAdapter
             // 
@@ -439,30 +418,6 @@
             // nPCsTableAdapter
             // 
             this.nPCsTableAdapter.ClearBeforeFill = true;
-            // 
-            // LblVizNPCs
-            // 
-            this.LblVizNPCs.AutoSize = true;
-            this.LblVizNPCs.BackColor = System.Drawing.Color.Lime;
-            this.LblVizNPCs.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVizNPCs.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LblVizNPCs.Location = new System.Drawing.Point(728, 274);
-            this.LblVizNPCs.Name = "LblVizNPCs";
-            this.LblVizNPCs.Size = new System.Drawing.Size(60, 21);
-            this.LblVizNPCs.TabIndex = 9;
-            this.LblVizNPCs.Text = "NPC\'s";
-            // 
-            // BtnInativarGeral
-            // 
-            this.BtnInativarGeral.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__14_;
-            this.BtnInativarGeral.Font = new System.Drawing.Font("Reem Kufi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInativarGeral.ForeColor = System.Drawing.Color.Chartreuse;
-            this.BtnInativarGeral.Location = new System.Drawing.Point(694, 12);
-            this.BtnInativarGeral.Name = "BtnInativarGeral";
-            this.BtnInativarGeral.Size = new System.Drawing.Size(94, 93);
-            this.BtnInativarGeral.TabIndex = 10;
-            this.BtnInativarGeral.Text = "Inativar";
-            this.BtnInativarGeral.UseVisualStyleBackColor = true;
             // 
             // LblVizInativar
             // 
@@ -475,17 +430,104 @@
             this.LblVizInativar.Size = new System.Drawing.Size(0, 21);
             this.LblVizInativar.TabIndex = 11;
             // 
+            // BtnInativarPersonagem
+            // 
+            this.BtnInativarPersonagem.BackColor = System.Drawing.Color.SpringGreen;
+            this.BtnInativarPersonagem.Font = new System.Drawing.Font("ScriptC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInativarPersonagem.Location = new System.Drawing.Point(129, 9);
+            this.BtnInativarPersonagem.Name = "BtnInativarPersonagem";
+            this.BtnInativarPersonagem.Size = new System.Drawing.Size(156, 23);
+            this.BtnInativarPersonagem.TabIndex = 12;
+            this.BtnInativarPersonagem.Text = "Inativar personagem";
+            this.BtnInativarPersonagem.UseVisualStyleBackColor = false;
+            this.BtnInativarPersonagem.Click += new System.EventHandler(this.BtnInativarPersonagem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Green;
+            this.label1.Font = new System.Drawing.Font("ScriptC", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(28, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 22);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Monstros";
+            // 
+            // BtnInativarMonstro
+            // 
+            this.BtnInativarMonstro.BackColor = System.Drawing.Color.SpringGreen;
+            this.BtnInativarMonstro.Font = new System.Drawing.Font("ScriptC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInativarMonstro.Location = new System.Drawing.Point(109, 276);
+            this.BtnInativarMonstro.Name = "BtnInativarMonstro";
+            this.BtnInativarMonstro.Size = new System.Drawing.Size(126, 23);
+            this.BtnInativarMonstro.TabIndex = 14;
+            this.BtnInativarMonstro.Text = "Inativar Monstro";
+            this.BtnInativarMonstro.UseVisualStyleBackColor = false;
+            this.BtnInativarMonstro.Click += new System.EventHandler(this.BtnInativarMonstro_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Green;
+            this.label2.Font = new System.Drawing.Font("ScriptC", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(358, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 22);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Sessoes";
+            // 
+            // BtnInativarSessao
+            // 
+            this.BtnInativarSessao.BackColor = System.Drawing.Color.SpringGreen;
+            this.BtnInativarSessao.Font = new System.Drawing.Font("ScriptC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInativarSessao.Location = new System.Drawing.Point(423, 119);
+            this.BtnInativarSessao.Name = "BtnInativarSessao";
+            this.BtnInativarSessao.Size = new System.Drawing.Size(126, 23);
+            this.BtnInativarSessao.TabIndex = 16;
+            this.BtnInativarSessao.Text = "Inativar Sessão";
+            this.BtnInativarSessao.UseVisualStyleBackColor = false;
+            this.BtnInativarSessao.Click += new System.EventHandler(this.BtnInativarSessao_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Green;
+            this.label3.Font = new System.Drawing.Font("ScriptC", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(729, 273);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 22);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "NPC\'s";
+            // 
+            // BtnInativarNPC
+            // 
+            this.BtnInativarNPC.BackColor = System.Drawing.Color.SpringGreen;
+            this.BtnInativarNPC.Font = new System.Drawing.Font("ScriptC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInativarNPC.Location = new System.Drawing.Point(597, 273);
+            this.BtnInativarNPC.Name = "BtnInativarNPC";
+            this.BtnInativarNPC.Size = new System.Drawing.Size(126, 23);
+            this.BtnInativarNPC.TabIndex = 18;
+            this.BtnInativarNPC.Text = "Inativar NPC";
+            this.BtnInativarNPC.UseVisualStyleBackColor = false;
+            this.BtnInativarNPC.Click += new System.EventHandler(this.BtnInativarNPC_Click);
+            // 
             // FrmVizualizarCampanha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.o_estrangeiro;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnInativarNPC);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BtnInativarSessao);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BtnInativarMonstro);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BtnInativarPersonagem);
             this.Controls.Add(this.LblVizInativar);
-            this.Controls.Add(this.BtnInativarGeral);
-            this.Controls.Add(this.LblVizNPCs);
-            this.Controls.Add(this.LblVizMonstros);
-            this.Controls.Add(this.LblVizSessoes);
             this.Controls.Add(this.LblVizPersonagens);
             this.Controls.Add(this.DgvNPCs);
             this.Controls.Add(this.DgvMonstros);
@@ -534,7 +576,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCampanhaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoAtualDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label LblVizSessoes;
         private RPGdbDataSet9 rPGdbDataSet9;
         private System.Windows.Forms.BindingSource sessoesRPGBindingSource;
         private RPGdbDataSet9TableAdapters.SessoesRPGTableAdapter sessoesRPGTableAdapter;
@@ -543,7 +584,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoesDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Label LblVizMonstros;
         private RPGdbDataSet10 rPGdbDataSet10;
         private System.Windows.Forms.BindingSource monstrosBindingSource;
         private RPGdbDataSet10TableAdapters.MonstrosTableAdapter monstrosTableAdapter;
@@ -564,8 +604,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCampanhaDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoesDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoAtualDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Label LblVizNPCs;
-        private System.Windows.Forms.Button BtnInativarGeral;
         private System.Windows.Forms.Label LblVizInativar;
+        private System.Windows.Forms.Button BtnInativarPersonagem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnInativarMonstro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnInativarSessao;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BtnInativarNPC;
     }
 }
