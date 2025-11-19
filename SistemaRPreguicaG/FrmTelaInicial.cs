@@ -33,10 +33,18 @@ namespace SistemaRPreguicaG
             criarCamp.ShowDialog();
         }
 
+        // ✅ MANTIDO O NOME ORIGINAL - button1
         private void button1_Click(object sender, EventArgs e)
         {
             FrmListaCampanhas listaCamp = new FrmListaCampanhas(usuarioLogadoId);
             listaCamp.ShowDialog();
+        }
+
+        // ✅ BOTÃO ADICIONADO - Gerenciar Jogadores
+        private void BtnGerenciarJogadores_Click(object sender, EventArgs e)
+        {
+            FrmJogadores frmJogadores = new FrmJogadores(usuarioLogadoId);
+            frmJogadores.ShowDialog();
         }
 
         // Evento para carregar a tela inicial

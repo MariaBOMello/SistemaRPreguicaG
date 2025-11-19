@@ -123,6 +123,26 @@ namespace SistemaRPreguicaG.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cadastrar_Jogadores__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Cadastrar Jogadores (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cadastrar_Jogadores__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Cadastrar Jogadores (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carente {
             get {
                 object obj = ResourceManager.GetObject("carente", resourceCulture);
@@ -216,6 +236,16 @@ namespace SistemaRPreguicaG.Properties {
         internal static System.Drawing.Bitmap Design_sem_nome__14_ {
             get {
                 object obj = ResourceManager.GetObject("Design sem nome (14)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__16_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (16)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +366,16 @@ namespace SistemaRPreguicaG.Properties {
         internal static System.Drawing.Bitmap espreitador_botao2 {
             get {
                 object obj = ResourceManager.GetObject("espreitador botao2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ficha2 {
+            get {
+                object obj = ResourceManager.GetObject("ficha2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

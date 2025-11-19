@@ -129,6 +129,21 @@ namespace SistemaRPreguicaG
             }
         }
 
+        // ✅ BOTÃO ADICIONADO - Gerenciar Personagens
+        private void BtnGerenciarPersonagens_Click(object sender, EventArgs e)
+        {
+            if (DgvListaCampanhas.CurrentRow != null)
+            {
+                int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
+                FrmPersonagens frmPersonagens = new FrmPersonagens(usuarioLogadoId, idCampanha);
+                frmPersonagens.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione uma Campanha primeiro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

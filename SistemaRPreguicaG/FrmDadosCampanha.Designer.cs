@@ -29,14 +29,9 @@
         private void InitializeComponent()
         {
             this.LblMonstros = new System.Windows.Forms.Label();
-            this.LblPersonagens = new System.Windows.Forms.Label();
             this.LblCalendario = new System.Windows.Forms.Label();
             this.LblNPC = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.TxtPersonagemNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtMonstroNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,16 +46,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TxtDefesa = new System.Windows.Forms.TextBox();
             this.BtnSalvarDados = new System.Windows.Forms.Button();
-            this.CbxOrigem = new System.Windows.Forms.ComboBox();
-            this.CbxClasse = new System.Windows.Forms.ComboBox();
             this.LblObservacoes = new System.Windows.Forms.Label();
-            this.TxtObservacoesPersonagens = new System.Windows.Forms.TextBox();
             this.DtpFim = new System.Windows.Forms.DateTimePicker();
             this.DtpInicio = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.TxtObservacoesNPCs = new System.Windows.Forms.TextBox();
             this.TxtObservacoesMonstros = new System.Windows.Forms.TextBox();
@@ -81,17 +72,6 @@
             this.LblMonstros.TabIndex = 4;
             this.LblMonstros.Text = "Monstros utilizados";
             // 
-            // LblPersonagens
-            // 
-            this.LblPersonagens.AutoSize = true;
-            this.LblPersonagens.BackColor = System.Drawing.Color.IndianRed;
-            this.LblPersonagens.Font = new System.Drawing.Font("RomanC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPersonagens.Location = new System.Drawing.Point(32, 21);
-            this.LblPersonagens.Name = "LblPersonagens";
-            this.LblPersonagens.Size = new System.Drawing.Size(104, 17);
-            this.LblPersonagens.TabIndex = 5;
-            this.LblPersonagens.Text = "Personagens";
-            // 
             // LblCalendario
             // 
             this.LblCalendario.AutoSize = true;
@@ -108,7 +88,7 @@
             this.LblNPC.AutoSize = true;
             this.LblNPC.BackColor = System.Drawing.Color.IndianRed;
             this.LblNPC.Font = new System.Drawing.Font("RomanC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNPC.Location = new System.Drawing.Point(260, 21);
+            this.LblNPC.Location = new System.Drawing.Point(32, 21);
             this.LblNPC.Name = "LblNPC";
             this.LblNPC.Size = new System.Drawing.Size(50, 17);
             this.LblNPC.TabIndex = 7;
@@ -121,47 +101,6 @@
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(0, 13);
             this.linkLabel1.TabIndex = 8;
-            // 
-            // TxtPersonagemNome
-            // 
-            this.TxtPersonagemNome.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtPersonagemNome.Location = new System.Drawing.Point(35, 74);
-            this.TxtPersonagemNome.Name = "TxtPersonagemNome";
-            this.TxtPersonagemNome.Size = new System.Drawing.Size(187, 20);
-            this.TxtPersonagemNome.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.RosyBrown;
-            this.label1.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nome";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.RosyBrown;
-            this.label2.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 18);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Classe";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.RosyBrown;
-            this.label3.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 18);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Origem";
             // 
             // label4
             // 
@@ -187,7 +126,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.RosyBrown;
             this.label5.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(243, 52);
+            this.label5.Location = new System.Drawing.Point(30, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 18);
             this.label5.TabIndex = 17;
@@ -196,7 +135,7 @@
             // TxtNpcNome
             // 
             this.TxtNpcNome.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtNpcNome.Location = new System.Drawing.Point(246, 73);
+            this.TxtNpcNome.Location = new System.Drawing.Point(35, 74);
             this.TxtNpcNome.Name = "TxtNpcNome";
             this.TxtNpcNome.Size = new System.Drawing.Size(187, 20);
             this.TxtNpcNome.TabIndex = 18;
@@ -206,7 +145,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.RosyBrown;
             this.label6.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(243, 97);
+            this.label6.Location = new System.Drawing.Point(30, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 18);
             this.label6.TabIndex = 19;
@@ -215,7 +154,7 @@
             // TxtFuncao
             // 
             this.TxtFuncao.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtFuncao.Location = new System.Drawing.Point(246, 119);
+            this.TxtFuncao.Location = new System.Drawing.Point(35, 127);
             this.TxtFuncao.Name = "TxtFuncao";
             this.TxtFuncao.Size = new System.Drawing.Size(187, 20);
             this.TxtFuncao.TabIndex = 20;
@@ -296,90 +235,16 @@
             this.BtnSalvarDados.UseVisualStyleBackColor = false;
             this.BtnSalvarDados.Click += new System.EventHandler(this.BtnSalvarDados_Click);
             // 
-            // CbxOrigem
-            // 
-            this.CbxOrigem.FormattingEnabled = true;
-            this.CbxOrigem.Items.AddRange(new object[] {
-            "Acadêmico",
-            "Agente de Saúde",
-            "Amnésico",
-            "Artista",
-            "Astronauta",
-            "Atleta",
-            "Chef",
-            "Chef do outro lado",
-            "Colegial",
-            "Cosplayer",
-            "Criminoso",
-            "Cultista Arrependido",
-            "Desgarrado",
-            "Diplomata",
-            "Engenheiro",
-            "Executivo",
-            "Experimento",
-            "Explorador",
-            "Fanático por Criaturas",
-            "Fotógrafo",
-            "Inventor Paranormal",
-            "Investigador",
-            "Jovem Místico",
-            "Legista do turno da noite",
-            "Lutador",
-            "Magnata",
-            "Mateiro",
-            "Mercenário",
-            "Mergulhador",
-            "Militar",
-            "Motorista",
-            "Nerd Entusiasta",
-            "Operário",
-            "Policial",
-            "Profetizado",
-            "Psicólogo",
-            "Religioso",
-            "Reporter Investigativo",
-            "Servidor Público",
-            "Teórico da Conspiração",
-            "T.I.",
-            "Trabalhador Rural",
-            "Trambiqueiro",
-            "Universitário",
-            "Vítima"});
-            this.CbxOrigem.Location = new System.Drawing.Point(35, 162);
-            this.CbxOrigem.Name = "CbxOrigem";
-            this.CbxOrigem.Size = new System.Drawing.Size(187, 21);
-            this.CbxOrigem.TabIndex = 29;
-            // 
-            // CbxClasse
-            // 
-            this.CbxClasse.FormattingEnabled = true;
-            this.CbxClasse.Items.AddRange(new object[] {
-            "Combatente",
-            "Especialista",
-            "Ocultista"});
-            this.CbxClasse.Location = new System.Drawing.Point(35, 118);
-            this.CbxClasse.Name = "CbxClasse";
-            this.CbxClasse.Size = new System.Drawing.Size(187, 21);
-            this.CbxClasse.TabIndex = 30;
-            // 
             // LblObservacoes
             // 
             this.LblObservacoes.AutoSize = true;
             this.LblObservacoes.BackColor = System.Drawing.Color.IndianRed;
             this.LblObservacoes.Font = new System.Drawing.Font("RomanC", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblObservacoes.Location = new System.Drawing.Point(243, 211);
+            this.LblObservacoes.Location = new System.Drawing.Point(243, 21);
             this.LblObservacoes.Name = "LblObservacoes";
             this.LblObservacoes.Size = new System.Drawing.Size(101, 17);
             this.LblObservacoes.TabIndex = 31;
             this.LblObservacoes.Text = "Observações";
-            // 
-            // TxtObservacoesPersonagens
-            // 
-            this.TxtObservacoesPersonagens.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtObservacoesPersonagens.Location = new System.Drawing.Point(246, 262);
-            this.TxtObservacoesPersonagens.Name = "TxtObservacoesPersonagens";
-            this.TxtObservacoesPersonagens.Size = new System.Drawing.Size(187, 20);
-            this.TxtObservacoesPersonagens.TabIndex = 32;
             // 
             // DtpFim
             // 
@@ -431,17 +296,6 @@
             this.label12.Text = "Horário do término";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.RosyBrown;
-            this.label13.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(243, 241);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 18);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Personagens";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -455,7 +309,7 @@
             // TxtObservacoesNPCs
             // 
             this.TxtObservacoesNPCs.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtObservacoesNPCs.Location = new System.Drawing.Point(246, 306);
+            this.TxtObservacoesNPCs.Location = new System.Drawing.Point(246, 74);
             this.TxtObservacoesNPCs.Name = "TxtObservacoesNPCs";
             this.TxtObservacoesNPCs.Size = new System.Drawing.Size(187, 20);
             this.TxtObservacoesNPCs.TabIndex = 40;
@@ -463,7 +317,7 @@
             // TxtObservacoesMonstros
             // 
             this.TxtObservacoesMonstros.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtObservacoesMonstros.Location = new System.Drawing.Point(246, 351);
+            this.TxtObservacoesMonstros.Location = new System.Drawing.Point(246, 127);
             this.TxtObservacoesMonstros.Name = "TxtObservacoesMonstros";
             this.TxtObservacoesMonstros.Size = new System.Drawing.Size(187, 20);
             this.TxtObservacoesMonstros.TabIndex = 41;
@@ -471,7 +325,7 @@
             // TxtObservacoesSessao
             // 
             this.TxtObservacoesSessao.BackColor = System.Drawing.Color.LightCoral;
-            this.TxtObservacoesSessao.Location = new System.Drawing.Point(246, 397);
+            this.TxtObservacoesSessao.Location = new System.Drawing.Point(246, 180);
             this.TxtObservacoesSessao.Name = "TxtObservacoesSessao";
             this.TxtObservacoesSessao.Size = new System.Drawing.Size(187, 20);
             this.TxtObservacoesSessao.TabIndex = 42;
@@ -481,7 +335,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.RosyBrown;
             this.label15.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(243, 285);
+            this.label15.Location = new System.Drawing.Point(243, 52);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 18);
             this.label15.TabIndex = 43;
@@ -492,7 +346,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.RosyBrown;
             this.label16.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(243, 330);
+            this.label16.Location = new System.Drawing.Point(243, 106);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(83, 18);
             this.label16.TabIndex = 44;
@@ -503,7 +357,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.RosyBrown;
             this.label17.Font = new System.Drawing.Font("RomanT", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(243, 374);
+            this.label17.Location = new System.Drawing.Point(243, 159);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(60, 18);
             this.label17.TabIndex = 45;
@@ -522,16 +376,12 @@
             this.Controls.Add(this.TxtObservacoesMonstros);
             this.Controls.Add(this.TxtObservacoesNPCs);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.DtpInicio);
             this.Controls.Add(this.DtpFim);
-            this.Controls.Add(this.TxtObservacoesPersonagens);
             this.Controls.Add(this.LblObservacoes);
-            this.Controls.Add(this.CbxClasse);
-            this.Controls.Add(this.CbxOrigem);
             this.Controls.Add(this.BtnSalvarDados);
             this.Controls.Add(this.TxtDefesa);
             this.Controls.Add(this.label9);
@@ -546,17 +396,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtMonstroNome);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TxtPersonagemNome);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.LblNPC);
             this.Controls.Add(this.LblCalendario);
-            this.Controls.Add(this.LblPersonagens);
             this.Controls.Add(this.LblMonstros);
             this.Name = "FrmDadosCampanha";
             this.Text = "FrmDadosCampanha";
+            this.Load += new System.EventHandler(this.FrmDadosCampanha_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,14 +410,9 @@
 
         #endregion
         private System.Windows.Forms.Label LblMonstros;
-        private System.Windows.Forms.Label LblPersonagens;
         private System.Windows.Forms.Label LblCalendario;
         private System.Windows.Forms.Label LblNPC;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox TxtPersonagemNome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxtMonstroNome;
         private System.Windows.Forms.Label label5;
@@ -586,16 +427,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtDefesa;
         private System.Windows.Forms.Button BtnSalvarDados;
-        private System.Windows.Forms.ComboBox CbxOrigem;
-        private System.Windows.Forms.ComboBox CbxClasse;
         private System.Windows.Forms.Label LblObservacoes;
-        private System.Windows.Forms.TextBox TxtObservacoesPersonagens;
         private System.Windows.Forms.DateTimePicker DtpFim;
         private System.Windows.Forms.DateTimePicker DtpInicio;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox TxtObservacoesNPCs;
         private System.Windows.Forms.TextBox TxtObservacoesMonstros;

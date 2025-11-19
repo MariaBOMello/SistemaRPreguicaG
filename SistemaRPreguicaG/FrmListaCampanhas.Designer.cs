@@ -47,6 +47,7 @@
             this.BtnVizualizarCampanha = new System.Windows.Forms.Button();
             this.BtnInativarCampanha = new System.Windows.Forms.Button();
             this.campanhas_NovaTableAdapter1 = new SistemaRPreguicaG.RPGdbDataSet7TableAdapters.Campanhas_NovaTableAdapter();
+            this.BtnGerenciarPersonagens = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCampanhas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campanhasNovaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet7)).BeginInit();
@@ -139,9 +140,9 @@
             this.BtnSelecionarCampanha.Font = new System.Drawing.Font("RomanT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSelecionarCampanha.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnSelecionarCampanha.Image = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__12_;
-            this.BtnSelecionarCampanha.Location = new System.Drawing.Point(615, 155);
+            this.BtnSelecionarCampanha.Location = new System.Drawing.Point(604, 108);
             this.BtnSelecionarCampanha.Name = "BtnSelecionarCampanha";
-            this.BtnSelecionarCampanha.Size = new System.Drawing.Size(144, 115);
+            this.BtnSelecionarCampanha.Size = new System.Drawing.Size(155, 81);
             this.BtnSelecionarCampanha.TabIndex = 2;
             this.BtnSelecionarCampanha.Text = "Editar";
             this.BtnSelecionarCampanha.UseVisualStyleBackColor = true;
@@ -162,9 +163,9 @@
             this.BtnVizualizarCampanha.Font = new System.Drawing.Font("RomanT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVizualizarCampanha.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnVizualizarCampanha.Image = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__12_;
-            this.BtnVizualizarCampanha.Location = new System.Drawing.Point(615, 12);
+            this.BtnVizualizarCampanha.Location = new System.Drawing.Point(604, 12);
             this.BtnVizualizarCampanha.Name = "BtnVizualizarCampanha";
-            this.BtnVizualizarCampanha.Size = new System.Drawing.Size(144, 115);
+            this.BtnVizualizarCampanha.Size = new System.Drawing.Size(155, 90);
             this.BtnVizualizarCampanha.TabIndex = 3;
             this.BtnVizualizarCampanha.Text = "Vizualizar";
             this.BtnVizualizarCampanha.UseVisualStyleBackColor = true;
@@ -176,9 +177,9 @@
             this.BtnInativarCampanha.Font = new System.Drawing.Font("RomanT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInativarCampanha.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnInativarCampanha.Image = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__12_;
-            this.BtnInativarCampanha.Location = new System.Drawing.Point(615, 311);
+            this.BtnInativarCampanha.Location = new System.Drawing.Point(604, 311);
             this.BtnInativarCampanha.Name = "BtnInativarCampanha";
-            this.BtnInativarCampanha.Size = new System.Drawing.Size(144, 115);
+            this.BtnInativarCampanha.Size = new System.Drawing.Size(155, 88);
             this.BtnInativarCampanha.TabIndex = 4;
             this.BtnInativarCampanha.Text = "Inativar";
             this.BtnInativarCampanha.UseVisualStyleBackColor = true;
@@ -188,12 +189,26 @@
             // 
             this.campanhas_NovaTableAdapter1.ClearBeforeFill = true;
             // 
+            // BtnGerenciarPersonagens
+            // 
+            this.BtnGerenciarPersonagens.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__13_;
+            this.BtnGerenciarPersonagens.Font = new System.Drawing.Font("RomanT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGerenciarPersonagens.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnGerenciarPersonagens.Image = global::SistemaRPreguicaG.Properties.Resources.Design_sem_nome__12_;
+            this.BtnGerenciarPersonagens.Location = new System.Drawing.Point(604, 214);
+            this.BtnGerenciarPersonagens.Name = "BtnGerenciarPersonagens";
+            this.BtnGerenciarPersonagens.Size = new System.Drawing.Size(155, 91);
+            this.BtnGerenciarPersonagens.TabIndex = 5;
+            this.BtnGerenciarPersonagens.Text = "Gerenciar Personagens";
+            this.BtnGerenciarPersonagens.UseVisualStyleBackColor = true;
+            // 
             // FrmListaCampanhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaRPreguicaG.Properties.Resources.baixados;
             this.ClientSize = new System.Drawing.Size(780, 450);
+            this.Controls.Add(this.BtnGerenciarPersonagens);
             this.Controls.Add(this.BtnInativarCampanha);
             this.Controls.Add(this.BtnVizualizarCampanha);
             this.Controls.Add(this.BtnSelecionarCampanha);
@@ -231,5 +246,6 @@
         private RPGdbDataSet7 rPGdbDataSet7;
         private System.Windows.Forms.BindingSource campanhasNovaBindingSource1;
         private RPGdbDataSet7TableAdapters.Campanhas_NovaTableAdapter campanhas_NovaTableAdapter1;
+        private System.Windows.Forms.Button BtnGerenciarPersonagens;
     }
 }

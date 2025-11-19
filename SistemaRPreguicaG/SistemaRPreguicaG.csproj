@@ -65,6 +65,12 @@
     <Compile Include="FrmDadosCampanha.Designer.cs">
       <DependentUpon>FrmDadosCampanha.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJogadores.Designer.cs">
+      <DependentUpon>FrmJogadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListaCampanhas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPGdbDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet13.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPGdbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,8 +195,14 @@
     <EmbeddedResource Include="FrmDadosCampanha.resx">
       <DependentUpon>FrmDadosCampanha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmJogadores.resx">
+      <DependentUpon>FrmJogadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListaCampanhas.resx">
       <DependentUpon>FrmListaCampanhas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPersonagens.resx">
+      <DependentUpon>FrmPersonagens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTelaCadastro.resx">
       <DependentUpon>FrmTelaCadastro.cs</DependentUpon>
@@ -256,6 +278,28 @@
     </None>
     <None Include="RPGdbDataSet11.xss">
       <DependentUpon>RPGdbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet12.xsc">
+      <DependentUpon>RPGdbDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet12.xss">
+      <DependentUpon>RPGdbDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet13.xsc">
+      <DependentUpon>RPGdbDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet13.xss">
+      <DependentUpon>RPGdbDataSet13.xsd</DependentUpon>
     </None>
     <None Include="RPGdbDataSet2.xsc">
       <DependentUpon>RPGdbDataSet2.xsd</DependentUpon>
@@ -477,6 +521,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cadastrar Jogadores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastrar Jogadores %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastrar Jogadores %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ficha2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome %2816%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,138 +36,140 @@ namespace SistemaRPreguicaG
                     con.Open();
 
                     // PERSONAGENS
-                    using (SqlDataAdapter daPersonagens = new SqlDataAdapter(
-                        "SELECT * FROM Personagens WHERE Id_Campanha = @IdCampanha AND Estado_Atual = 'Ativa'", con))
-                    {
-                        daPersonagens.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
-                        DataTable dtPersonagens = new DataTable();
-                        daPersonagens.Fill(dtPersonagens);
-                        DgvPersonagens.DataSource = dtPersonagens;
-                    }
+                    string sqlPersonagens = @"SELECT Id_Personagem, Nome, Classe, Origem, Observacoes 
+                                     FROM Personagens 
+                                     WHERE Id_Campanha = @IdCampanha 
+                                     AND Estado_Atual = 'Ativa'";
+                    DgvPersonagens.DataSource = BuscarDados(con, sqlPersonagens);
 
                     // MONSTROS
-                    using (SqlDataAdapter daMonstros = new SqlDataAdapter(
-                        "SELECT * FROM Monstros WHERE Id_Campanha = @IdCampanha AND Estado_Atual = 'Ativa'", con))
-                    {
-                        daMonstros.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
-                        DataTable dtMonstros = new DataTable();
-                        daMonstros.Fill(dtMonstros);
-                        DgvMonstros.DataSource = dtMonstros;
-                    }
+                    string sqlMonstros = @"SELECT Id_Monstro, Nome, VD, PV, Defesa, Observacoes 
+                                  FROM Monstros 
+                                  WHERE Id_Campanha = @IdCampanha 
+                                  AND Estado_Atual = 'Ativa'";
+                    DgvMonstros.DataSource = BuscarDados(con, sqlMonstros);
 
                     // NPCs
-                    using (SqlDataAdapter daNPCs = new SqlDataAdapter(
-                        "SELECT * FROM NPCs WHERE Id_Campanha = @IdCampanha AND Estado_Atual = 'Ativa'", con))
-                    {
-                        daNPCs.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
-                        DataTable dtNPCs = new DataTable();
-                        daNPCs.Fill(dtNPCs);
-                        DgvNPCs.DataSource = dtNPCs;
-                    }
+                    string sqlNPCs = @"SELECT Id_NPC, Nome, Funcao, Observacoes 
+                              FROM NPCs 
+                              WHERE Id_Campanha = @IdCampanha 
+                              AND Estado_Atual = 'Ativa'";
+                    DgvNPCs.DataSource = BuscarDados(con, sqlNPCs);
 
                     // SESSÕES
-                    using (SqlDataAdapter daSessoes = new SqlDataAdapter(
-                        "SELECT * FROM SessoesRPG WHERE Id_Campanha = @IdCampanha AND Estado_Atual = 'Ativa'", con))
-                    {
-                        daSessoes.SelectCommand.Parameters.Add("@IdCampanha", SqlDbType.Int).Value = IdCampanha;
-                        DataTable dtSessoes = new DataTable();
-                        daSessoes.Fill(dtSessoes);
-                        DgvSessoes.DataSource = dtSessoes;
-                    }
+                    string sqlSessoes = @"SELECT Id, DataInicio, DataFim, Observacoes 
+                                 FROM SessoesRPG 
+                                 WHERE Id_Campanha = @IdCampanha 
+                                 AND Estado_Atual = 'Ativa'";
+                    DgvSessoes.DataSource = BuscarDados(con, sqlSessoes);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar os dados da campanha: " + ex.Message,
-                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void InativarRegistro(string tabela, int id)
+        private DataTable BuscarDados(SqlConnection con, string sql)
         {
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                cmd.Parameters.AddWithValue("@IdCampanha", IdCampanha);
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        private void InativarRegistroComConfirmacao(string tabela, DataGridView dgv, string nomeColunaId)
+        {
+            if (dgv.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione uma linha primeiro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Pega o valor da primeira coluna (que é sempre o ID)
+            var valorId = dgv.CurrentRow.Cells[0].Value;
+            if (valorId == null || valorId == DBNull.Value)
+            {
+                MessageBox.Show("ID do registro não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int id = Convert.ToInt32(valorId);
+
+            // Confirmação
+            var resultado = MessageBox.Show($"Tem certeza que deseja inativar este registro?",
+                                          "Confirmação",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question);
+
+            if (resultado != DialogResult.Yes)
+                return;
+
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = $"UPDATE {tabela} SET Estado_Atual = 'Inativa' WHERE Id = @Id";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    string sql = $"UPDATE {tabela} SET Estado_Atual = 'Inativa' WHERE {nomeColunaId} = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@Id", id);
-                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@id", id);
+                        int linhas = cmd.ExecuteNonQuery();
+
+                        if (linhas > 0)
+                        {
+                            MessageBox.Show("Registro inativado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregarDados();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nenhum registro foi alterado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao inativar registro em {tabela}: " + ex.Message,
-                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao inativar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // -------- BOTÕES DE INATIVAR COM OS NOMES CORRETOS --------
         private void BtnInativarPersonagem_Click(object sender, EventArgs e)
         {
-            if (DgvPersonagens.CurrentRow != null)
-            {
-                int id = Convert.ToInt32(DgvPersonagens.CurrentRow.Cells["Id"].Value);
-                InativarRegistro("Personagens", id);
-                MessageBox.Show("Personagem inativado com sucesso!");
-                CarregarDados();
-            }
-            else
-            {
-                MessageBox.Show("Selecione um personagem para inativar.");
-            }
+            InativarRegistroComConfirmacao("Personagens", DgvPersonagens, "Id_Personagem");
         }
 
         private void BtnInativarMonstro_Click(object sender, EventArgs e)
         {
-            if (DgvMonstros.CurrentRow != null)
-            {
-                int id = Convert.ToInt32(DgvMonstros.CurrentRow.Cells["Id"].Value);
-                InativarRegistro("Monstros", id);
-                MessageBox.Show("Monstro inativado com sucesso!");
-                CarregarDados();
-            }
-            else
-            {
-                MessageBox.Show("Selecione um monstro para inativar.");
-            }
+            InativarRegistroComConfirmacao("Monstros", DgvMonstros, "Id_Monstro");
         }
 
         private void BtnInativarNPC_Click(object sender, EventArgs e)
         {
-            if (DgvNPCs.CurrentRow != null)
-            {
-                int id = Convert.ToInt32(DgvNPCs.CurrentRow.Cells["Id"].Value);
-                InativarRegistro("NPCs", id);
-                MessageBox.Show("NPC inativado com sucesso!");
-                CarregarDados();
-            }
-            else
-            {
-                MessageBox.Show("Selecione um NPC para inativar.");
-            }
+            InativarRegistroComConfirmacao("NPCs", DgvNPCs, "Id_NPC");
         }
 
         private void BtnInativarSessao_Click(object sender, EventArgs e)
         {
-            if (DgvSessoes.CurrentRow != null)
-            {
-                int id = Convert.ToInt32(DgvSessoes.CurrentRow.Cells["Id"].Value);
-                InativarRegistro("SessoesRPG", id);
-                MessageBox.Show("Sessão inativada com sucesso!");
-                CarregarDados();
-            }
-            else
-            {
-                MessageBox.Show("Selecione uma sessão para inativar.");
-            }
+            InativarRegistroComConfirmacao("SessoesRPG", DgvSessoes, "Id");
         }
 
         private void DgvMonstros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Mantido propositalmente vazio
+            // Mantido vazio
+        }
+
+        private void DgvNPCs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Mantido vazio
         }
     }
 }
