@@ -82,13 +82,17 @@ namespace SistemaRPreguicaG
             }
         }
 
+        // ✅ BOTÃO CORRIGIDO - Agora abre FrmMenuCampanha
         private void BtnVizualizarCampanha_Click(object sender, EventArgs e)
         {
             if (DgvListaCampanhas.CurrentRow != null)
             {
                 int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
-                FrmVizualizarCampanha frmVisualizar = new FrmVizualizarCampanha(idCampanha);
-                frmVisualizar.ShowDialog();
+                string nomeCampanha = DgvListaCampanhas.CurrentRow.Cells[1].Value.ToString();
+
+                // ✅ AGORA ABRE O MENU DA CAMPANHA
+                FrmMenuCampanha frmMenu = new FrmMenuCampanha(idCampanha, nomeCampanha);
+                frmMenu.ShowDialog();
             }
             else
             {
@@ -129,6 +133,11 @@ namespace SistemaRPreguicaG
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Método vazio - apenas para resolver o erro
+        }
+
         // ✅ BOTÃO ADICIONADO - Gerenciar Personagens
         private void BtnGerenciarPersonagens_Click(object sender, EventArgs e)
         {
@@ -145,5 +154,12 @@ namespace SistemaRPreguicaG
         }
 
         private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
+        private void FrmListaCampanhas_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet23.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
+            this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet23.Campanhas_Nova);
+
+        }
     }
 }
