@@ -82,11 +82,6 @@
             this.CbxExperiencia.BackColor = System.Drawing.Color.Red;
             this.CbxExperiencia.Font = new System.Drawing.Font("NSimSun", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxExperiencia.FormattingEnabled = true;
-            this.CbxExperiencia.Items.AddRange(new object[] {
-            "Iniciante",
-            "Intermediário",
-            "Experiente",
-            "Mestre"});
             this.CbxExperiencia.Location = new System.Drawing.Point(436, 345);
             this.CbxExperiencia.Name = "CbxExperiencia";
             this.CbxExperiencia.Size = new System.Drawing.Size(121, 21);
@@ -102,6 +97,7 @@
             this.BtnCancelar.TabIndex = 8;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
             // 
             // BtnSalvar
             // 
@@ -113,6 +109,7 @@
             this.BtnSalvar.TabIndex = 9;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = false;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click_1);
             // 
             // FrmJogadores
             // 

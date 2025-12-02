@@ -43,7 +43,7 @@
             this.txtSenha.Location = new System.Drawing.Point(281, 275);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(163, 20);
-            this.txtSenha.TabIndex = 0;
+            this.txtSenha.TabIndex = 1;
             // 
             // txtEmail
             // 
@@ -51,7 +51,7 @@
             this.txtEmail.Location = new System.Drawing.Point(54, 233);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(178, 20);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 0;
             // 
             // label1
             // 
@@ -86,7 +86,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(601, 349);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(59, 23);
-            this.btnCadastrar.TabIndex = 4;
+            this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "AGORA";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -98,7 +98,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(211, 336);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
-            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -110,7 +110,7 @@
             this.btnSair.Location = new System.Drawing.Point(-2, 349);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(101, 69);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 4;
             this.btnSair.Text = "Vai se deconectar do paranormal?";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);

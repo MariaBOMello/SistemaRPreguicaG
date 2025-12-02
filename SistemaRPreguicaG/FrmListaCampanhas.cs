@@ -157,8 +157,10 @@ namespace SistemaRPreguicaG
 
         private void FrmListaCampanhas_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet25.Campanhas_Unificada'. Você pode movê-la ou removê-la conforme necessário.
+            //this.campanhas_UnificadaTableAdapter.Fill(this.rPGdbDataSet25.Campanhas_Unificada);
             // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet23.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
-            this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet23.Campanhas_Nova);
+            //this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet23.Campanhas_Nova);
 
         }
     }

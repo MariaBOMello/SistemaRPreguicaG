@@ -53,5 +53,11 @@ namespace SistemaRPreguicaG
             // Exemplo: mostrar o e-mail do usuário logado na tela (opcional)
             this.Text = $"Bem-vindo - {usuarioLogadoEmail}";
         }
+
+        private void BtnGerenciarJogadores_Click_1(object sender, EventArgs e)
+        {
+            FrmJogadores frmJogadores = new FrmJogadores(usuarioLogadoId);
+            frmJogadores.ShowDialog();
+        }
     }
 }

@@ -99,6 +99,16 @@ namespace SistemaRPreguicaG
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnSalvar_Click_1(object sender, EventArgs e)
+        {
             if (!ValidarCampos())
                 return;
 
@@ -233,11 +243,6 @@ namespace SistemaRPreguicaG
             TxtProtecao.Clear();
 
             TxtOutros.Clear();
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

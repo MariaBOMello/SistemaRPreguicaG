@@ -148,6 +148,7 @@
             this.BtnGerenciarJogadores.Size = new System.Drawing.Size(172, 161);
             this.BtnGerenciarJogadores.TabIndex = 9;
             this.BtnGerenciarJogadores.UseVisualStyleBackColor = false;
+            this.BtnGerenciarJogadores.Click += new System.EventHandler(this.BtnGerenciarJogadores_Click_1);
             // 
             // FrmTelaInicial
             // 

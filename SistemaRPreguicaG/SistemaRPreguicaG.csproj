@@ -47,18 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Campanha.cs" />
-    <Compile Include="FrmCadastroJogadores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCadastroJogadores.Designer.cs">
-      <DependentUpon>FrmCadastroJogadores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmCampanhasExistentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCampanhasExistentes.Designer.cs">
-      <DependentUpon>FrmCampanhasExistentes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDadosCampanha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +218,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet24.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPGdbDataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet25.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPGdbDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -265,9 +258,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet9.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmCadastroJogadores.resx">
-      <DependentUpon>FrmCadastroJogadores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmCriarCampanha.resx">
       <DependentUpon>FrmCriarCampanha.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +513,17 @@
     </None>
     <None Include="RPGdbDataSet24.xss">
       <DependentUpon>RPGdbDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet25.xsc">
+      <DependentUpon>RPGdbDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet25.xss">
+      <DependentUpon>RPGdbDataSet25.xsd</DependentUpon>
     </None>
     <None Include="RPGdbDataSet3.xsc">
       <DependentUpon>RPGdbDataSet3.xsd</DependentUpon>
