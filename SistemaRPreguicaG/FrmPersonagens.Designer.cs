@@ -87,10 +87,6 @@
             // 
             this.CbxClasse.Font = new System.Drawing.Font("NSimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxClasse.FormattingEnabled = true;
-            this.CbxClasse.Items.AddRange(new object[] {
-            "Combatente",
-            "Especialista",
-            "Ocultista"});
             this.CbxClasse.Location = new System.Drawing.Point(648, 228);
             this.CbxClasse.Name = "CbxClasse";
             this.CbxClasse.Size = new System.Drawing.Size(283, 32);
@@ -150,6 +146,7 @@
             this.CbxOrigem.Name = "CbxOrigem";
             this.CbxOrigem.Size = new System.Drawing.Size(272, 32);
             this.CbxOrigem.TabIndex = 32;
+            this.CbxOrigem.SelectedIndexChanged += new System.EventHandler(this.CbxOrigem_SelectedIndexChanged);
             // 
             // CbxNEX
             // 

@@ -68,13 +68,11 @@ namespace SistemaRPreguicaG
                 return;
             }
 
-            int idMonstro = Convert.ToInt32(DgvMonstros.CurrentRow.Cells["Id_Monstro"].Value);
-            string nomeMonstro = DgvMonstros.CurrentRow.Cells["Nome"].Value.ToString();
+            int idMonstro = Convert.ToInt32(DgvMonstros.CurrentRow.Cells[0].Value);
+            string nomeMonstro = DgvMonstros.CurrentRow.Cells[1].Value.ToString();
 
-            var resultado = MessageBox.Show($"Tem certeza que deseja inativar o monstro '{nomeMonstro}'?",
-                                          "Confirmação",
-                                          MessageBoxButtons.YesNo,
-                                          MessageBoxIcon.Question);
+            var resultado = MessageBox.Show($"Inativar o monstro '{nomeMonstro}'?",
+                                          "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -91,30 +89,27 @@ namespace SistemaRPreguicaG
                         }
                     }
 
-                    MessageBox.Show("Monstro inativado com sucesso!", "Sucesso",
+                    MessageBox.Show("✅ Monstro inativado!", "Sucesso",
                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CarregarMonstros();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao inativar monstro: " + ex.Message, "Erro",
+                    MessageBox.Show($"Erro: {ex.Message}", "Erro",
                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void BtnVoltar_Click(object sender, EventArgs e)
-
         {
             this.Close();
         }
 
-        // ✅ ADICIONE ESTE MÉTODO SE FALTAR
         private void FrmVizualizarMonstros_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet24.Monstros'. Você pode movê-la ou removê-la conforme necessário.
-            this.monstrosTableAdapter.Fill(this.rPGdbDataSet24.Monstros);
-            // Pode ficar vazio ou adicionar inicializações extras
+            // COMENTAR se tiver esta linha:
+            // this.monstrosTableAdapter.Fill(this.rPGdbDataSet24.Monstros);
         }
     }
 }

@@ -66,17 +66,15 @@ namespace SistemaRPreguicaG
                 return;
             }
 
-            int idSessao = Convert.ToInt32(DgvSessoes.CurrentRow.Cells["Id"].Value);
-            DateTime dataSessao = Convert.ToDateTime(DgvSessoes.CurrentRow.Cells["DataInicio"].Value);
-
-            var resultado = MessageBox.Show($"Tem certeza que deseja inativar a sessão de {dataSessao:dd/MM/yyyy}?",
-                                          "Confirmação",
-                                          MessageBoxButtons.YesNo,
-                                          MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.Yes)
+            try
             {
-                try
+                int idSessao = Convert.ToInt32(DgvSessoes.CurrentRow.Cells[0].Value);
+                DateTime dataSessao = Convert.ToDateTime(DgvSessoes.CurrentRow.Cells[1].Value);
+
+                var resultado = MessageBox.Show($"Inativar a sessão de {dataSessao:dd/MM/yyyy}?",
+                                              "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
                 {
                     using (SqlConnection con = new SqlConnection(connectionString))
                     {
@@ -86,18 +84,18 @@ namespace SistemaRPreguicaG
                         {
                             cmd.Parameters.AddWithValue("@Id", idSessao);
                             cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("✅ Sessão inativada!", "Sucesso",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregarSessoes();
                         }
                     }
-
-                    MessageBox.Show("Sessão inativada com sucesso!", "Sucesso",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CarregarSessoes();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao inativar sessão: " + ex.Message, "Erro",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}", "Erro",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -108,9 +106,10 @@ namespace SistemaRPreguicaG
 
         private void FrmVizualizarSessoes_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet21.SessoesRPG'. Você pode movê-la ou removê-la conforme necessário.
-            this.sessoesRPGTableAdapter.Fill(this.rPGdbDataSet21.SessoesRPG);
-
+            // COMENTAR se tiver esta linha:
+            // this.sessoesRPGTableAdapter.Fill(this.rPGdbDataSet21.SessoesRPG);
         }
+
     }
+
 }

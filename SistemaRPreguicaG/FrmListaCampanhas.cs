@@ -15,6 +15,7 @@ namespace SistemaRPreguicaG
     {
         private List<Campanha> campanhas = new List<Campanha>();
         private int usuarioLogadoId;
+        private string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
 
         public FrmListaCampanhas(int idUsuario)
         {
@@ -25,7 +26,6 @@ namespace SistemaRPreguicaG
 
         public void CarregarCampanhas()
         {
-            string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
             campanhas.Clear();
 
             try
@@ -82,7 +82,6 @@ namespace SistemaRPreguicaG
             }
         }
 
-        // ✅ BOTÃO CORRIGIDO - Agora abre FrmMenuCampanha
         private void BtnVizualizarCampanha_Click(object sender, EventArgs e)
         {
             if (DgvListaCampanhas.CurrentRow != null)
@@ -90,7 +89,6 @@ namespace SistemaRPreguicaG
                 int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
                 string nomeCampanha = DgvListaCampanhas.CurrentRow.Cells[1].Value.ToString();
 
-                // ✅ AGORA ABRE O MENU DA CAMPANHA
                 FrmMenuCampanha frmMenu = new FrmMenuCampanha(idCampanha, nomeCampanha);
                 frmMenu.ShowDialog();
             }
@@ -108,37 +106,46 @@ namespace SistemaRPreguicaG
                 return;
             }
 
-            int id = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
-
             try
             {
-                string connectionString = @"Server=sqlexpress;Database=RPGdb;USER ID=aluno;PASSWORD=aluno;";
-                using (SqlConnection con = new SqlConnection(connectionString))
+                int idCampanha = Convert.ToInt32(DgvListaCampanhas.CurrentRow.Cells[0].Value);
+                string nomeCampanha = DgvListaCampanhas.CurrentRow.Cells[1].Value.ToString();
+
+                var resultado = MessageBox.Show($"Inativar a campanha '{nomeCampanha}'?",
+                                              "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
                 {
-                    con.Open();
-                    string queryUpdate = "UPDATE Campanhas_Unificada SET Estado_Atual = 'Inativa' WHERE Id = @Id";
-                    using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                    using (SqlConnection con = new SqlConnection(connectionString))
                     {
-                        cmd.Parameters.AddWithValue("@Id", id);
-                        cmd.ExecuteNonQuery();
+                        con.Open();
+                        string query = "UPDATE Campanhas_Unificada SET Estado_Atual = 'Inativa' WHERE Id = @Id";
+                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        {
+                            cmd.Parameters.AddWithValue("@Id", idCampanha);
+                            int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                            if (linhasAfetadas > 0)
+                            {
+                                MessageBox.Show("✅ Campanha inativada!", "Sucesso",
+                                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CarregarCampanhas();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Campanha não encontrada.", "Aviso",
+                                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
                     }
                 }
-
-                MessageBox.Show("Campanha inativada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CarregarCampanhas();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao inativar campanha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Método vazio - apenas para resolver o erro
-        }
-
-        // ✅ BOTÃO ADICIONADO - Gerenciar Personagens
         private void BtnGerenciarPersonagens_Click(object sender, EventArgs e)
         {
             if (DgvListaCampanhas.CurrentRow != null)
@@ -153,15 +160,21 @@ namespace SistemaRPreguicaG
             }
         }
 
-        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Método vazio
+        }
+
+        private void DgvListaCampanhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Método vazio
+        }
 
         private void FrmListaCampanhas_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet25.Campanhas_Unificada'. Você pode movê-la ou removê-la conforme necessário.
-            //this.campanhas_UnificadaTableAdapter.Fill(this.rPGdbDataSet25.Campanhas_Unificada);
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet23.Campanhas_Nova'. Você pode movê-la ou removê-la conforme necessário.
-            //this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet23.Campanhas_Nova);
-
+            // COMENTAR se tiver estas linhas:
+            // this.campanhas_UnificadaTableAdapter.Fill(this.rPGdbDataSet25.Campanhas_Unificada);
+            // this.campanhas_NovaTableAdapter.Fill(this.rPGdbDataSet23.Campanhas_Nova);
         }
     }
 }

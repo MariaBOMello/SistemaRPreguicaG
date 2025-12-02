@@ -40,10 +40,6 @@ namespace SistemaRPreguicaG
             DtpDataNascimento.Value = DateTime.Today;
             DtpDataNascimento.Checked = false;
         }
-
-
-
-        // ✅ ADICIONE ESTE MÉTODO SE NÃO EXISTIR
         private void FrmJogadores_Load(object sender, EventArgs e)
         {
             // Pode ficar vazio

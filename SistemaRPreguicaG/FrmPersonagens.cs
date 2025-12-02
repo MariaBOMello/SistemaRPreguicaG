@@ -244,5 +244,10 @@ namespace SistemaRPreguicaG
 
             TxtOutros.Clear();
         }
+
+        private void CbxOrigem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

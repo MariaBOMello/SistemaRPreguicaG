@@ -20,41 +20,34 @@ namespace SistemaRPreguicaG
             InitializeComponent();
             this.idCampanha = idCampanha;
             this.nomeCampanha = nomeCampanha;
-
-            // Configurar título da janela
             this.Text = $"Gerenciar Campanha: {nomeCampanha}";
-
-            // ✅ CONFIGURAR OS BOTÕES CORRETAMENTE
-            // Se você tiver um Label para o título, descomente a linha abaixo:
-            // LblTitulo.Text = $"Gerenciar: {nomeCampanha}";
         }
 
-
-        private void BtnPersonagens_Click_1(object sender, EventArgs e)
+        private void BtnPersonagens_Click(object sender, EventArgs e)
         {
             FrmVizualizarPersonagens frmPersonagens = new FrmVizualizarPersonagens(1);
             frmPersonagens.ShowDialog();
         }
 
-        private void BtnMonstros_Click_1(object sender, EventArgs e)
+        private void BtnMonstros_Click(object sender, EventArgs e)
         {
             FrmVizualizarMonstros frmMonstros = new FrmVizualizarMonstros(idCampanha);
             frmMonstros.ShowDialog();
         }
 
-        private void BtnNPCs_Click_1(object sender, EventArgs e)
+        private void BtnNPCs_Click(object sender, EventArgs e)
         {
             FrmVizualizarNPCs frmNPCs = new FrmVizualizarNPCs(idCampanha);
             frmNPCs.ShowDialog();
         }
 
-        private void BtnSessoes_Click_1(object sender, EventArgs e)
+        private void BtnSessoes_Click(object sender, EventArgs e)
         {
             FrmVizualizarSessoes frmSessoes = new FrmVizualizarSessoes(idCampanha);
             frmSessoes.ShowDialog();
         }
 
-        private void BtnVoltar_Click_1(object sender, EventArgs e)
+        private void BtnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

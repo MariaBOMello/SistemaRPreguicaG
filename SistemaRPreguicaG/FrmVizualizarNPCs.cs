@@ -66,13 +66,11 @@ namespace SistemaRPreguicaG
                 return;
             }
 
-            int idNPC = Convert.ToInt32(DgvNPCs.CurrentRow.Cells["Id_NPC"].Value);
-            string nomeNPC = DgvNPCs.CurrentRow.Cells["Nome"].Value.ToString();
+            int idNPC = Convert.ToInt32(DgvNPCs.CurrentRow.Cells[0].Value);
+            string nomeNPC = DgvNPCs.CurrentRow.Cells[1].Value.ToString();
 
-            var resultado = MessageBox.Show($"Tem certeza que deseja inativar o NPC '{nomeNPC}'?",
-                                          "Confirmação",
-                                          MessageBoxButtons.YesNo,
-                                          MessageBoxIcon.Question);
+            var resultado = MessageBox.Show($"Inativar o NPC '{nomeNPC}'?",
+                                          "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -89,13 +87,13 @@ namespace SistemaRPreguicaG
                         }
                     }
 
-                    MessageBox.Show("NPC inativado com sucesso!", "Sucesso",
+                    MessageBox.Show("✅ NPC inativado!", "Sucesso",
                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CarregarNPCs();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao inativar NPC: " + ex.Message, "Erro",
+                    MessageBox.Show($"Erro: {ex.Message}", "Erro",
                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -108,9 +106,8 @@ namespace SistemaRPreguicaG
 
         private void FrmVizualizarNPCs_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rPGdbDataSet22.NPCs'. Você pode movê-la ou removê-la conforme necessário.
-            this.nPCsTableAdapter.Fill(this.rPGdbDataSet22.NPCs);
-
+            // COMENTAR se tiver esta linha:
+            // this.nPCsTableAdapter.Fill(this.rPGdbDataSet22.NPCs);
         }
     }
 }
