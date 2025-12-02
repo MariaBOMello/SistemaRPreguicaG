@@ -155,29 +155,9 @@
             // 
             this.CbxNEX.Font = new System.Drawing.Font("NSimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxNEX.FormattingEnabled = true;
-            this.CbxNEX.Items.AddRange(new object[] {
-            "0",
-            "5",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30",
-            "35",
-            "40",
-            "45",
-            "50",
-            "55",
-            "60",
-            "65",
-            "70",
-            "75",
-            "90",
-            "95",
-            "99"});
             this.CbxNEX.Location = new System.Drawing.Point(619, 280);
             this.CbxNEX.Name = "CbxNEX";
-            this.CbxNEX.Size = new System.Drawing.Size(36, 32);
+            this.CbxNEX.Size = new System.Drawing.Size(54, 32);
             this.CbxNEX.TabIndex = 33;
             // 
             // TxtOutros
@@ -234,41 +214,41 @@
             // NumPVMaximo
             // 
             this.NumPVMaximo.Font = new System.Drawing.Font("NSimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumPVMaximo.Location = new System.Drawing.Point(600, 342);
+            this.NumPVMaximo.Location = new System.Drawing.Point(591, 342);
             this.NumPVMaximo.Name = "NumPVMaximo";
-            this.NumPVMaximo.Size = new System.Drawing.Size(34, 38);
+            this.NumPVMaximo.Size = new System.Drawing.Size(52, 38);
             this.NumPVMaximo.TabIndex = 46;
             // 
             // NumPEMaximo
             // 
             this.NumPEMaximo.Font = new System.Drawing.Font("NSimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumPEMaximo.Location = new System.Drawing.Point(778, 342);
+            this.NumPEMaximo.Location = new System.Drawing.Point(772, 342);
             this.NumPEMaximo.Name = "NumPEMaximo";
-            this.NumPEMaximo.Size = new System.Drawing.Size(34, 38);
+            this.NumPEMaximo.Size = new System.Drawing.Size(55, 38);
             this.NumPEMaximo.TabIndex = 47;
             // 
             // NumSanidadeMaxima
             // 
             this.NumSanidadeMaxima.Font = new System.Drawing.Font("NSimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumSanidadeMaxima.Location = new System.Drawing.Point(822, 440);
+            this.NumSanidadeMaxima.Location = new System.Drawing.Point(806, 440);
             this.NumSanidadeMaxima.Name = "NumSanidadeMaxima";
-            this.NumSanidadeMaxima.Size = new System.Drawing.Size(34, 38);
+            this.NumSanidadeMaxima.Size = new System.Drawing.Size(70, 38);
             this.NumSanidadeMaxima.TabIndex = 48;
             // 
             // NumDefesa
             // 
             this.NumDefesa.Font = new System.Drawing.Font("NSimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumDefesa.Location = new System.Drawing.Point(600, 440);
+            this.NumDefesa.Location = new System.Drawing.Point(591, 440);
             this.NumDefesa.Name = "NumDefesa";
-            this.NumDefesa.Size = new System.Drawing.Size(34, 38);
+            this.NumDefesa.Size = new System.Drawing.Size(52, 38);
             this.NumDefesa.TabIndex = 49;
             // 
             // NumPEPorRodada
             // 
             this.NumPEPorRodada.Font = new System.Drawing.Font("NSimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumPEPorRodada.Location = new System.Drawing.Point(695, 280);
+            this.NumPEPorRodada.Location = new System.Drawing.Point(679, 280);
             this.NumPEPorRodada.Name = "NumPEPorRodada";
-            this.NumPEPorRodada.Size = new System.Drawing.Size(34, 38);
+            this.NumPEPorRodada.Size = new System.Drawing.Size(63, 38);
             this.NumPEPorRodada.TabIndex = 50;
             // 
             // NumDeslocamento

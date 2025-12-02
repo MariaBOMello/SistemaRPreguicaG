@@ -18,75 +18,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.DgvPersonagens = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnInativarPersonagem = new System.Windows.Forms.Button();
             this.BtnVoltar = new System.Windows.Forms.Button();
-            this.rPGdbDataSet19 = new SistemaRPreguicaG.RPGdbDataSet19();
+            this.rPGdbDataSet27 = new SistemaRPreguicaG.RPGdbDataSet27();
             this.personagensBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personagensTableAdapter = new SistemaRPreguicaG.RPGdbDataSet19TableAdapters.PersonagensTableAdapter();
-            this.idPersonagemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idJogadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.forcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agilidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intelectoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vigorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presencaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pVMaximoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sanidadeMaximaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pEMaximoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pEPorRodadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.defesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resistenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deslocamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bonusEquipamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.protecaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataCriacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoAtualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvPersonagens)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet19)).BeginInit();
+            this.personagensTableAdapter = new SistemaRPreguicaG.RPGdbDataSet27TableAdapters.PersonagensTableAdapter();
+            this.tableAdapterManager = new SistemaRPreguicaG.RPGdbDataSet27TableAdapters.TableAdapterManager();
+            this.DgvPersonagens = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personagensBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPersonagens)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DgvPersonagens
-            // 
-            this.DgvPersonagens.AutoGenerateColumns = false;
-            this.DgvPersonagens.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.DgvPersonagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvPersonagens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPersonagemDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.classeDataGridViewTextBoxColumn,
-            this.origemDataGridViewTextBoxColumn,
-            this.nEXDataGridViewTextBoxColumn,
-            this.idJogadorDataGridViewTextBoxColumn,
-            this.forcaDataGridViewTextBoxColumn,
-            this.agilidadeDataGridViewTextBoxColumn,
-            this.intelectoDataGridViewTextBoxColumn,
-            this.vigorDataGridViewTextBoxColumn,
-            this.presencaDataGridViewTextBoxColumn,
-            this.pVMaximoDataGridViewTextBoxColumn,
-            this.sanidadeMaximaDataGridViewTextBoxColumn,
-            this.pEMaximoDataGridViewTextBoxColumn,
-            this.pEPorRodadaDataGridViewTextBoxColumn,
-            this.defesaDataGridViewTextBoxColumn,
-            this.resistenciaDataGridViewTextBoxColumn,
-            this.deslocamentoDataGridViewTextBoxColumn,
-            this.bonusEquipamentoDataGridViewTextBoxColumn,
-            this.protecaoDataGridViewTextBoxColumn,
-            this.outrosDataGridViewTextBoxColumn,
-            this.dataCriacaoDataGridViewTextBoxColumn,
-            this.estadoAtualDataGridViewTextBoxColumn});
-            this.DgvPersonagens.DataSource = this.personagensBindingSource;
-            this.DgvPersonagens.Location = new System.Drawing.Point(20, 20);
-            this.DgvPersonagens.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DgvPersonagens.Name = "DgvPersonagens";
-            this.DgvPersonagens.Size = new System.Drawing.Size(800, 400);
-            this.DgvPersonagens.TabIndex = 0;
             // 
             // BtnInativarPersonagem
             // 
@@ -118,168 +86,226 @@
             this.BtnVoltar.UseVisualStyleBackColor = false;
             this.BtnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
             // 
-            // rPGdbDataSet19
+            // rPGdbDataSet27
             // 
-            this.rPGdbDataSet19.DataSetName = "RPGdbDataSet19";
-            this.rPGdbDataSet19.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.rPGdbDataSet27.DataSetName = "RPGdbDataSet27";
+            this.rPGdbDataSet27.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // personagensBindingSource
             // 
             this.personagensBindingSource.DataMember = "Personagens";
-            this.personagensBindingSource.DataSource = this.rPGdbDataSet19;
+            this.personagensBindingSource.DataSource = this.rPGdbDataSet27;
             // 
             // personagensTableAdapter
             // 
             this.personagensTableAdapter.ClearBeforeFill = true;
             // 
-            // idPersonagemDataGridViewTextBoxColumn
+            // tableAdapterManager
             // 
-            this.idPersonagemDataGridViewTextBoxColumn.DataPropertyName = "Id_Personagem";
-            this.idPersonagemDataGridViewTextBoxColumn.HeaderText = "Id_Personagem";
-            this.idPersonagemDataGridViewTextBoxColumn.Name = "idPersonagemDataGridViewTextBoxColumn";
-            this.idPersonagemDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.PersonagensTableAdapter = this.personagensTableAdapter;
+            this.tableAdapterManager.UpdateOrder = SistemaRPreguicaG.RPGdbDataSet27TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // nomeDataGridViewTextBoxColumn
+            // DgvPersonagens
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.DgvPersonagens.AutoGenerateColumns = false;
+            this.DgvPersonagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvPersonagens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24});
+            this.DgvPersonagens.DataSource = this.personagensBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvPersonagens.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvPersonagens.Location = new System.Drawing.Point(20, 82);
+            this.DgvPersonagens.Name = "DgvPersonagens";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            this.DgvPersonagens.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvPersonagens.Size = new System.Drawing.Size(800, 220);
+            this.DgvPersonagens.TabIndex = 3;
             // 
-            // classeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.classeDataGridViewTextBoxColumn.DataPropertyName = "Classe";
-            this.classeDataGridViewTextBoxColumn.HeaderText = "Classe";
-            this.classeDataGridViewTextBoxColumn.Name = "classeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id_Personagem";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id_Personagem";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // origemDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.origemDataGridViewTextBoxColumn.DataPropertyName = "Origem";
-            this.origemDataGridViewTextBoxColumn.HeaderText = "Origem";
-            this.origemDataGridViewTextBoxColumn.Name = "origemDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // nEXDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.nEXDataGridViewTextBoxColumn.DataPropertyName = "NEX";
-            this.nEXDataGridViewTextBoxColumn.HeaderText = "NEX";
-            this.nEXDataGridViewTextBoxColumn.Name = "nEXDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Classe";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Classe";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // idJogadorDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.idJogadorDataGridViewTextBoxColumn.DataPropertyName = "Id_Jogador";
-            this.idJogadorDataGridViewTextBoxColumn.HeaderText = "Id_Jogador";
-            this.idJogadorDataGridViewTextBoxColumn.Name = "idJogadorDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Origem";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Origem";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // forcaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.forcaDataGridViewTextBoxColumn.DataPropertyName = "Forca";
-            this.forcaDataGridViewTextBoxColumn.HeaderText = "Forca";
-            this.forcaDataGridViewTextBoxColumn.Name = "forcaDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NEX";
+            this.dataGridViewTextBoxColumn5.HeaderText = "NEX";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // agilidadeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.agilidadeDataGridViewTextBoxColumn.DataPropertyName = "Agilidade";
-            this.agilidadeDataGridViewTextBoxColumn.HeaderText = "Agilidade";
-            this.agilidadeDataGridViewTextBoxColumn.Name = "agilidadeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id_Jogador";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Id_Jogador";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // intelectoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.intelectoDataGridViewTextBoxColumn.DataPropertyName = "Intelecto";
-            this.intelectoDataGridViewTextBoxColumn.HeaderText = "Intelecto";
-            this.intelectoDataGridViewTextBoxColumn.Name = "intelectoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Forca";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Forca";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // vigorDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.vigorDataGridViewTextBoxColumn.DataPropertyName = "Vigor";
-            this.vigorDataGridViewTextBoxColumn.HeaderText = "Vigor";
-            this.vigorDataGridViewTextBoxColumn.Name = "vigorDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Agilidade";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Agilidade";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // presencaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.presencaDataGridViewTextBoxColumn.DataPropertyName = "Presenca";
-            this.presencaDataGridViewTextBoxColumn.HeaderText = "Presenca";
-            this.presencaDataGridViewTextBoxColumn.Name = "presencaDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Intelecto";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Intelecto";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // pVMaximoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn10
             // 
-            this.pVMaximoDataGridViewTextBoxColumn.DataPropertyName = "PV_Maximo";
-            this.pVMaximoDataGridViewTextBoxColumn.HeaderText = "PV_Maximo";
-            this.pVMaximoDataGridViewTextBoxColumn.Name = "pVMaximoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Vigor";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Vigor";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // sanidadeMaximaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn11
             // 
-            this.sanidadeMaximaDataGridViewTextBoxColumn.DataPropertyName = "Sanidade_Maxima";
-            this.sanidadeMaximaDataGridViewTextBoxColumn.HeaderText = "Sanidade_Maxima";
-            this.sanidadeMaximaDataGridViewTextBoxColumn.Name = "sanidadeMaximaDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Presenca";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Presenca";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // pEMaximoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn12
             // 
-            this.pEMaximoDataGridViewTextBoxColumn.DataPropertyName = "PE_Maximo";
-            this.pEMaximoDataGridViewTextBoxColumn.HeaderText = "PE_Maximo";
-            this.pEMaximoDataGridViewTextBoxColumn.Name = "pEMaximoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "PV_Maximo";
+            this.dataGridViewTextBoxColumn12.HeaderText = "PV_Maximo";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // pEPorRodadaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn13
             // 
-            this.pEPorRodadaDataGridViewTextBoxColumn.DataPropertyName = "PE_Por_Rodada";
-            this.pEPorRodadaDataGridViewTextBoxColumn.HeaderText = "PE_Por_Rodada";
-            this.pEPorRodadaDataGridViewTextBoxColumn.Name = "pEPorRodadaDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Sanidade_Maxima";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Sanidade_Maxima";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
-            // defesaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn14
             // 
-            this.defesaDataGridViewTextBoxColumn.DataPropertyName = "Defesa";
-            this.defesaDataGridViewTextBoxColumn.HeaderText = "Defesa";
-            this.defesaDataGridViewTextBoxColumn.Name = "defesaDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "PE_Maximo";
+            this.dataGridViewTextBoxColumn14.HeaderText = "PE_Maximo";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
-            // resistenciaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn15
             // 
-            this.resistenciaDataGridViewTextBoxColumn.DataPropertyName = "Resistencia";
-            this.resistenciaDataGridViewTextBoxColumn.HeaderText = "Resistencia";
-            this.resistenciaDataGridViewTextBoxColumn.Name = "resistenciaDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "PE_Por_Rodada";
+            this.dataGridViewTextBoxColumn15.HeaderText = "PE_Por_Rodada";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
-            // deslocamentoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn16
             // 
-            this.deslocamentoDataGridViewTextBoxColumn.DataPropertyName = "Deslocamento";
-            this.deslocamentoDataGridViewTextBoxColumn.HeaderText = "Deslocamento";
-            this.deslocamentoDataGridViewTextBoxColumn.Name = "deslocamentoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Defesa";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Defesa";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
-            // bonusEquipamentoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn17
             // 
-            this.bonusEquipamentoDataGridViewTextBoxColumn.DataPropertyName = "Bonus_Equipamento";
-            this.bonusEquipamentoDataGridViewTextBoxColumn.HeaderText = "Bonus_Equipamento";
-            this.bonusEquipamentoDataGridViewTextBoxColumn.Name = "bonusEquipamentoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Resistencia";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Resistencia";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
-            // protecaoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn18
             // 
-            this.protecaoDataGridViewTextBoxColumn.DataPropertyName = "Protecao";
-            this.protecaoDataGridViewTextBoxColumn.HeaderText = "Protecao";
-            this.protecaoDataGridViewTextBoxColumn.Name = "protecaoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "Deslocamento";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Deslocamento";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
-            // outrosDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn19
             // 
-            this.outrosDataGridViewTextBoxColumn.DataPropertyName = "Outros";
-            this.outrosDataGridViewTextBoxColumn.HeaderText = "Outros";
-            this.outrosDataGridViewTextBoxColumn.Name = "outrosDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Bonus_Equipamento";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Bonus_Equipamento";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
-            // dataCriacaoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn20
             // 
-            this.dataCriacaoDataGridViewTextBoxColumn.DataPropertyName = "DataCriacao";
-            this.dataCriacaoDataGridViewTextBoxColumn.HeaderText = "DataCriacao";
-            this.dataCriacaoDataGridViewTextBoxColumn.Name = "dataCriacaoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Protecao";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Protecao";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             // 
-            // estadoAtualDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn21
             // 
-            this.estadoAtualDataGridViewTextBoxColumn.DataPropertyName = "Estado_Atual";
-            this.estadoAtualDataGridViewTextBoxColumn.HeaderText = "Estado_Atual";
-            this.estadoAtualDataGridViewTextBoxColumn.Name = "estadoAtualDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Outros";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Outros";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "DataCriacao";
+            this.dataGridViewTextBoxColumn22.HeaderText = "DataCriacao";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Estado_Atual";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Estado_Atual";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Id_Campanha";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Id_Campanha";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             // 
             // FrmVizualizarPersonagens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(840, 505);
+            this.ClientSize = new System.Drawing.Size(840, 572);
+            this.Controls.Add(this.DgvPersonagens);
             this.Controls.Add(this.BtnVoltar);
             this.Controls.Add(this.BtnInativarPersonagem);
-            this.Controls.Add(this.DgvPersonagens);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -287,43 +313,44 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "👥 PERSONAGENS - CAMPAÑHA SOMBRIA";
             this.Load += new System.EventHandler(this.FrmVizualizarPersonagens_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvPersonagens)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personagensBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPersonagens)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DgvPersonagens;
         private System.Windows.Forms.Button BtnInativarPersonagem;
         private System.Windows.Forms.Button BtnVoltar;
-        private RPGdbDataSet19 rPGdbDataSet19;
+        private RPGdbDataSet27 rPGdbDataSet27;
         private System.Windows.Forms.BindingSource personagensBindingSource;
-        private RPGdbDataSet19TableAdapters.PersonagensTableAdapter personagensTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPersonagemDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn origemDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nEXDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idJogadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn forcaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn agilidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intelectoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vigorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn presencaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pVMaximoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sanidadeMaximaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pEMaximoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pEPorRodadaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn defesaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn resistenciaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deslocamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bonusEquipamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn protecaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn outrosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataCriacaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoAtualDataGridViewTextBoxColumn;
+        private RPGdbDataSet27TableAdapters.PersonagensTableAdapter personagensTableAdapter;
+        private RPGdbDataSet27TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView DgvPersonagens;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
     }
 }

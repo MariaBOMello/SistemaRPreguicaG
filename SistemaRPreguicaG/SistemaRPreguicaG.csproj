@@ -223,6 +223,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPGdbDataSet25.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPGdbDataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet27.cs">
+      <DependentUpon>RPGdbDataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPGdbDataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPGdbDataSet27.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPGdbDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -524,6 +537,28 @@
     </None>
     <None Include="RPGdbDataSet25.xss">
       <DependentUpon>RPGdbDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet26.xsc">
+      <DependentUpon>RPGdbDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet26.xss">
+      <DependentUpon>RPGdbDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet27.xsc">
+      <DependentUpon>RPGdbDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="RPGdbDataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPGdbDataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPGdbDataSet27.xss">
+      <DependentUpon>RPGdbDataSet27.xsd</DependentUpon>
     </None>
     <None Include="RPGdbDataSet3.xsc">
       <DependentUpon>RPGdbDataSet3.xsd</DependentUpon>

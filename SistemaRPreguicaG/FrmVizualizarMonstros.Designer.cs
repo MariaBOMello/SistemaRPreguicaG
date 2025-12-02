@@ -18,12 +18,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvMonstros = new System.Windows.Forms.DataGridView();
-            this.BtnInativarMonstro = new System.Windows.Forms.Button();
-            this.BtnVoltar = new System.Windows.Forms.Button();
-            this.rPGdbDataSet24 = new SistemaRPreguicaG.RPGdbDataSet24();
-            this.monstrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.monstrosTableAdapter = new SistemaRPreguicaG.RPGdbDataSet24TableAdapters.MonstrosTableAdapter();
             this.idMonstroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -32,9 +28,14 @@
             this.idCampanhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoAtualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monstrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rPGdbDataSet24 = new SistemaRPreguicaG.RPGdbDataSet24();
+            this.BtnInativarMonstro = new System.Windows.Forms.Button();
+            this.BtnVoltar = new System.Windows.Forms.Button();
+            this.monstrosTableAdapter = new SistemaRPreguicaG.RPGdbDataSet24TableAdapters.MonstrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMonstros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monstrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet24)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvMonstros
@@ -55,52 +56,14 @@
             this.DgvMonstros.Location = new System.Drawing.Point(20, 20);
             this.DgvMonstros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DgvMonstros.Name = "DgvMonstros";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvMonstros.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvMonstros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvMonstros.Size = new System.Drawing.Size(800, 400);
             this.DgvMonstros.TabIndex = 0;
-            // 
-            // BtnInativarMonstro
-            // 
-            this.BtnInativarMonstro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(0)))), ((int)(((byte)(130)))));
-            this.BtnInativarMonstro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInativarMonstro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInativarMonstro.ForeColor = System.Drawing.Color.White;
-            this.BtnInativarMonstro.Location = new System.Drawing.Point(20, 440);
-            this.BtnInativarMonstro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnInativarMonstro.Name = "BtnInativarMonstro";
-            this.BtnInativarMonstro.Size = new System.Drawing.Size(200, 45);
-            this.BtnInativarMonstro.TabIndex = 1;
-            this.BtnInativarMonstro.Text = "👹 INATIVAR";
-            this.BtnInativarMonstro.UseVisualStyleBackColor = false;
-            this.BtnInativarMonstro.Click += new System.EventHandler(this.BtnInativarMonstro_Click);
-            // 
-            // BtnVoltar
-            // 
-            this.BtnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(0)))), ((int)(((byte)(82)))));
-            this.BtnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVoltar.ForeColor = System.Drawing.Color.White;
-            this.BtnVoltar.Location = new System.Drawing.Point(620, 440);
-            this.BtnVoltar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnVoltar.Name = "BtnVoltar";
-            this.BtnVoltar.Size = new System.Drawing.Size(200, 45);
-            this.BtnVoltar.TabIndex = 2;
-            this.BtnVoltar.Text = "⬅️ VOLTAR";
-            this.BtnVoltar.UseVisualStyleBackColor = false;
-            this.BtnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
-            // 
-            // rPGdbDataSet24
-            // 
-            this.rPGdbDataSet24.DataSetName = "RPGdbDataSet24";
-            this.rPGdbDataSet24.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // monstrosBindingSource
-            // 
-            this.monstrosBindingSource.DataMember = "Monstros";
-            this.monstrosBindingSource.DataSource = this.rPGdbDataSet24;
-            // 
-            // monstrosTableAdapter
-            // 
-            this.monstrosTableAdapter.ClearBeforeFill = true;
             // 
             // idMonstroDataGridViewTextBoxColumn
             // 
@@ -151,6 +114,50 @@
             this.estadoAtualDataGridViewTextBoxColumn.HeaderText = "Estado_Atual";
             this.estadoAtualDataGridViewTextBoxColumn.Name = "estadoAtualDataGridViewTextBoxColumn";
             // 
+            // monstrosBindingSource
+            // 
+            this.monstrosBindingSource.DataMember = "Monstros";
+            this.monstrosBindingSource.DataSource = this.rPGdbDataSet24;
+            // 
+            // rPGdbDataSet24
+            // 
+            this.rPGdbDataSet24.DataSetName = "RPGdbDataSet24";
+            this.rPGdbDataSet24.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // BtnInativarMonstro
+            // 
+            this.BtnInativarMonstro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(0)))), ((int)(((byte)(130)))));
+            this.BtnInativarMonstro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInativarMonstro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInativarMonstro.ForeColor = System.Drawing.Color.White;
+            this.BtnInativarMonstro.Location = new System.Drawing.Point(20, 440);
+            this.BtnInativarMonstro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnInativarMonstro.Name = "BtnInativarMonstro";
+            this.BtnInativarMonstro.Size = new System.Drawing.Size(200, 45);
+            this.BtnInativarMonstro.TabIndex = 1;
+            this.BtnInativarMonstro.Text = "👹 INATIVAR";
+            this.BtnInativarMonstro.UseVisualStyleBackColor = false;
+            this.BtnInativarMonstro.Click += new System.EventHandler(this.BtnInativarMonstro_Click);
+            // 
+            // BtnVoltar
+            // 
+            this.BtnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(0)))), ((int)(((byte)(82)))));
+            this.BtnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVoltar.ForeColor = System.Drawing.Color.White;
+            this.BtnVoltar.Location = new System.Drawing.Point(620, 440);
+            this.BtnVoltar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnVoltar.Name = "BtnVoltar";
+            this.BtnVoltar.Size = new System.Drawing.Size(200, 45);
+            this.BtnVoltar.TabIndex = 2;
+            this.BtnVoltar.Text = "⬅️ VOLTAR";
+            this.BtnVoltar.UseVisualStyleBackColor = false;
+            this.BtnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
+            // 
+            // monstrosTableAdapter
+            // 
+            this.monstrosTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmVizualizarMonstros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -168,8 +175,8 @@
             this.Text = "🐉 MONSTROS - TERRITÓRIO OBSCURO";
             this.Load += new System.EventHandler(this.FrmVizualizarMonstros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMonstros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monstrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rPGdbDataSet24)).EndInit();
             this.ResumeLayout(false);
 
         }

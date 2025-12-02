@@ -43,6 +43,7 @@
             this.BtnPersonagens.Size = new System.Drawing.Size(140, 134);
             this.BtnPersonagens.TabIndex = 0;
             this.BtnPersonagens.UseVisualStyleBackColor = true;
+            this.BtnPersonagens.Click += new System.EventHandler(this.BtnPersonagens_Click_1);
             // 
             // BtnMonstros
             // 
@@ -52,6 +53,7 @@
             this.BtnMonstros.Size = new System.Drawing.Size(141, 134);
             this.BtnMonstros.TabIndex = 1;
             this.BtnMonstros.UseVisualStyleBackColor = true;
+            this.BtnMonstros.Click += new System.EventHandler(this.BtnMonstros_Click_1);
             // 
             // BtnNPCs
             // 
@@ -61,6 +63,7 @@
             this.BtnNPCs.Size = new System.Drawing.Size(138, 134);
             this.BtnNPCs.TabIndex = 2;
             this.BtnNPCs.UseVisualStyleBackColor = true;
+            this.BtnNPCs.Click += new System.EventHandler(this.BtnNPCs_Click_1);
             // 
             // BtnSessoes
             // 
@@ -70,6 +73,7 @@
             this.BtnSessoes.Size = new System.Drawing.Size(142, 134);
             this.BtnSessoes.TabIndex = 3;
             this.BtnSessoes.UseVisualStyleBackColor = true;
+            this.BtnSessoes.Click += new System.EventHandler(this.BtnSessoes_Click_1);
             // 
             // BtnVoltar
             // 
@@ -81,6 +85,7 @@
             this.BtnVoltar.TabIndex = 4;
             this.BtnVoltar.Text = "Voltar";
             this.BtnVoltar.UseVisualStyleBackColor = false;
+            this.BtnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click_1);
             // 
             // FrmMenuCampanha
             // 
